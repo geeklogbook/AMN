@@ -5,6 +5,8 @@ This project is a data pipeline designed to analyze and identify the most profit
 ## Overview
 The pipeline ingests data from various endpoints and loads it into a PostgreSQL database.
 
+![diagram](/docs/diagram.png)
+
 ## How to Run
 You can run the project using Docker. From the root directory, execute:
 
