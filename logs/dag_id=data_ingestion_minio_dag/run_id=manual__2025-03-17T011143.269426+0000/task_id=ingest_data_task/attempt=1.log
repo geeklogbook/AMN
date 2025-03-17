@@ -1,0 +1,30 @@
+[2025-03-17T01:11:46.405+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-17T01:11:46.436+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_minio_dag.ingest_data_task manual__2025-03-17T01:11:43.269426+00:00 [queued]>
+[2025-03-17T01:11:46.448+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_minio_dag.ingest_data_task manual__2025-03-17T01:11:43.269426+00:00 [queued]>
+[2025-03-17T01:11:46.449+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-03-17T01:11:46.465+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): ingest_data_task> on 2025-03-17 01:11:43.269426+00:00
+[2025-03-17T01:11:46.473+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_minio_dag', 'ingest_data_task', 'manual__2025-03-17T01:11:43.269426+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmppu00wyuq']
+[2025-03-17T01:11:46.476+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask ingest_data_task
+[2025-03-17T01:11:46.482+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=219) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-17T01:11:46.483+0000] {standard_task_runner.py:72} INFO - Started process 220 to run task
+[2025-03-17T01:11:46.546+0000] {task_command.py:467} INFO - Running <TaskInstance: data_ingestion_minio_dag.ingest_data_task manual__2025-03-17T01:11:43.269426+00:00 [running]> on host 643acaa02cac
+[2025-03-17T01:11:46.658+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_minio_dag' AIRFLOW_CTX_TASK_ID='ingest_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-03-17T01:11:43.269426+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-17T01:11:43.269426+00:00'
+[2025-03-17T01:11:46.659+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-17T01:11:52.200+0000] {logging_mixin.py:190} INFO - Archivo descargado: /tmp/PurchasesFINAL12312016csv.zip
+[2025-03-17T01:11:53.119+0000] {logging_mixin.py:190} INFO - Error al subir archivo a MinIO: Failed to upload /tmp/PurchasesFINAL12312016csv.zip to rawdata_20250317/PurchasesFINAL12312016csv.zip: An error occurred (InvalidBucketName) when calling the CreateMultipartUpload operation: The specified bucket is not valid.
+[2025-03-17T01:11:54.464+0000] {logging_mixin.py:190} INFO - Archivo descargado: /tmp/BegInvFINAL12312016csv.zip
+[2025-03-17T01:11:54.819+0000] {logging_mixin.py:190} INFO - Error al subir archivo a MinIO: Failed to upload /tmp/BegInvFINAL12312016csv.zip to rawdata_20250317/BegInvFINAL12312016csv.zip: An error occurred (InvalidBucketName) when calling the PutObject operation: The specified bucket is not valid.
+[2025-03-17T01:11:54.984+0000] {logging_mixin.py:190} INFO - Archivo descargado: /tmp/2017PurchasePricesDeccsv.zip
+[2025-03-17T01:11:55.041+0000] {logging_mixin.py:190} INFO - Error al subir archivo a MinIO: Failed to upload /tmp/2017PurchasePricesDeccsv.zip to rawdata_20250317/2017PurchasePricesDeccsv.zip: An error occurred (InvalidBucketName) when calling the PutObject operation: The specified bucket is not valid.
+[2025-03-17T01:11:55.193+0000] {logging_mixin.py:190} INFO - Archivo descargado: /tmp/VendorInvoices12312016csv.zip
+[2025-03-17T01:11:55.225+0000] {logging_mixin.py:190} INFO - Error al subir archivo a MinIO: Failed to upload /tmp/VendorInvoices12312016csv.zip to rawdata_20250317/VendorInvoices12312016csv.zip: An error occurred (InvalidBucketName) when calling the PutObject operation: The specified bucket is not valid.
+[2025-03-17T01:11:56.030+0000] {logging_mixin.py:190} INFO - Archivo descargado: /tmp/EndInvFINAL12312016csv.zip
+[2025-03-17T01:11:56.162+0000] {logging_mixin.py:190} INFO - Error al subir archivo a MinIO: Failed to upload /tmp/EndInvFINAL12312016csv.zip to rawdata_20250317/EndInvFINAL12312016csv.zip: An error occurred (InvalidBucketName) when calling the PutObject operation: The specified bucket is not valid.
+[2025-03-17T01:12:08.221+0000] {logging_mixin.py:190} INFO - Archivo descargado: /tmp/SalesFINAL12312016csv.zip
+[2025-03-17T01:12:08.252+0000] {logging_mixin.py:190} INFO - Error al subir archivo a MinIO: Failed to upload /tmp/SalesFINAL12312016csv.zip to rawdata_20250317/SalesFINAL12312016csv.zip: An error occurred (InvalidBucketName) when calling the CreateMultipartUpload operation: The specified bucket is not valid.
+[2025-03-17T01:12:08.281+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-17T01:12:08.306+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-17T01:12:08.308+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=data_ingestion_minio_dag, task_id=ingest_data_task, run_id=manual__2025-03-17T01:11:43.269426+00:00, execution_date=20250317T011143, start_date=20250317T011146, end_date=20250317T011208
+[2025-03-17T01:12:08.389+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-17T01:12:08.418+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-17T01:12:08.422+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

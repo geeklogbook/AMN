@@ -1,0 +1,16 @@
+name: amn_dbt  # Nombre del proyecto
+version: '1.0'  # Versión del proyecto
+config-version: 2  # Versión de la configuración de DBT
+
+# Definir el modelo y directorios
+profile: my_profile  # Perfil de conexión (debe coincidir con un perfil en profiles.yml)
+model-paths: ["models"]  # Ruta a los modelos DBT (renombrado de `source-paths`)
+target-path: "target"  # Directorio para los resultados de DBT
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+# Definir el tipo de base de datos
+models:
+  my_project:
+    +materialized: view  # Configuración por defecto de materialización
