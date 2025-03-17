@@ -1,0 +1,31 @@
+[2025-03-17T01:37:14.706+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-17T01:37:14.736+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_minio_dag.ingest_data_task manual__2025-03-17T01:37:10.986488+00:00 [queued]>
+[2025-03-17T01:37:14.748+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_minio_dag.ingest_data_task manual__2025-03-17T01:37:10.986488+00:00 [queued]>
+[2025-03-17T01:37:14.749+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-03-17T01:37:14.767+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): ingest_data_task> on 2025-03-17 01:37:10.986488+00:00
+[2025-03-17T01:37:14.775+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_minio_dag', 'ingest_data_task', 'manual__2025-03-17T01:37:10.986488+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/ingestion_dag.py', '--cfg-path', '/tmp/tmp0krn4nc7']
+[2025-03-17T01:37:14.778+0000] {standard_task_runner.py:105} INFO - Job 21: Subtask ingest_data_task
+[2025-03-17T01:37:14.780+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=380) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-17T01:37:14.781+0000] {standard_task_runner.py:72} INFO - Started process 381 to run task
+[2025-03-17T01:37:14.848+0000] {task_command.py:467} INFO - Running <TaskInstance: data_ingestion_minio_dag.ingest_data_task manual__2025-03-17T01:37:10.986488+00:00 [running]> on host 643acaa02cac
+[2025-03-17T01:37:14.971+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_minio_dag' AIRFLOW_CTX_TASK_ID='ingest_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-03-17T01:37:10.986488+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-17T01:37:10.986488+00:00'
+[2025-03-17T01:37:14.972+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-17T01:37:15.153+0000] {logging_mixin.py:190} INFO - Bucket creado: rawdata
+[2025-03-17T01:37:18.611+0000] {logging_mixin.py:190} INFO - Archivo descargado en memoria: PurchasesFINAL12312016csv.zip
+[2025-03-17T01:37:20.938+0000] {logging_mixin.py:190} INFO - Archivo subido a MinIO: PurchasesFINAL12312016csv.zip
+[2025-03-17T01:37:21.433+0000] {logging_mixin.py:190} INFO - Archivo descargado en memoria: BegInvFINAL12312016csv.zip
+[2025-03-17T01:37:21.618+0000] {logging_mixin.py:190} INFO - Archivo subido a MinIO: BegInvFINAL12312016csv.zip
+[2025-03-17T01:37:21.780+0000] {logging_mixin.py:190} INFO - Archivo descargado en memoria: 2017PurchasePricesDeccsv.zip
+[2025-03-17T01:37:21.828+0000] {logging_mixin.py:190} INFO - Archivo subido a MinIO: 2017PurchasePricesDeccsv.zip
+[2025-03-17T01:37:21.991+0000] {logging_mixin.py:190} INFO - Archivo descargado en memoria: VendorInvoices12312016csv.zip
+[2025-03-17T01:37:22.024+0000] {logging_mixin.py:190} INFO - Archivo subido a MinIO: VendorInvoices12312016csv.zip
+[2025-03-17T01:37:22.468+0000] {logging_mixin.py:190} INFO - Archivo descargado en memoria: EndInvFINAL12312016csv.zip
+[2025-03-17T01:37:22.557+0000] {logging_mixin.py:190} INFO - Archivo subido a MinIO: EndInvFINAL12312016csv.zip
+[2025-03-17T01:37:34.291+0000] {logging_mixin.py:190} INFO - Archivo descargado en memoria: SalesFINAL12312016csv.zip
+[2025-03-17T01:37:42.021+0000] {logging_mixin.py:190} INFO - Archivo subido a MinIO: SalesFINAL12312016csv.zip
+[2025-03-17T01:37:42.027+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-17T01:37:42.043+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-17T01:37:42.044+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=data_ingestion_minio_dag, task_id=ingest_data_task, run_id=manual__2025-03-17T01:37:10.986488+00:00, execution_date=20250317T013710, start_date=20250317T013714, end_date=20250317T013742
+[2025-03-17T01:37:42.144+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-17T01:37:42.169+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-17T01:37:42.172+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
