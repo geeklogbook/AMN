@@ -8,21 +8,21 @@ import psycopg2
 from airflow.operators.python import PythonOperator
 import zipfile
 
-# Parámetros de conexión
 MINIO_ENDPOINT = 'http://data-lake:9000'
 MINIO_ACCESS_KEY = 'minio'
 MINIO_SECRET_KEY = 'minio123'
-POSTGRES_HOST = 'postgres_host'  # Reemplaza con la dirección de tu host PostgreSQL
+POSTGRES_HOST = 'postgresql-data' 
 POSTGRES_PORT = '5432'
-POSTGRES_DB = 'your_db'
-POSTGRES_USER = 'your_user'
-POSTGRES_PASSWORD = 'your_password'
-BUCKET_NAME = 'rawdata_{}'.format(datetime.now().strftime('%Y%m%d'))  # Nombre del bucket con la fecha de hoy
+POSTGRES_DB = 'amn_datawarehouse'
+POSTGRES_USER = 'myuser'
+POSTGRES_PASSWORD = 'mypassword'
+#BUCKET_NAME = 'rawdata_{}'.format(datetime.now().strftime('%Y%m%d'))  
+BUCKET_NAME = 'rawdata'
 
-# Crear sesión de Spark
+
 spark = SparkSession.builder \
     .appName("Data Transformation with Spark") \
-    .config("spark.jars", "/opt/spark/jars/*") \
+    .master("spark://spark-master:7077") \
     .getOrCreate()
 
 
@@ -34,28 +34,32 @@ def download_and_load_to_spark(**kwargs):
                              region_name='us-east-1')
 
     objects = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
-    files = [obj['Key'] for obj in objects.get('Contents', [])]
+    files = {obj['Key'] for obj in objects.get('Contents', [])}
 
-    for file in files:
-        file_obj = s3_client.get_object(Bucket=BUCKET_NAME, Key=file)
-        zip_content = BytesIO(file_obj['Body'].read())
-        
+    # Diccionario para asignar nombres personalizados
+    target_files = {
+        "2017PurchasePricesDec.zip": "purchasePrices",
+        "SalesFINAL12312016.zip": "sales"
+    }
 
-        with zipfile.ZipFile(zip_content, 'r') as zip_ref:
-            zip_files = zip_ref.namelist()
-            
-            for zip_file in zip_files:
-                with zip_ref.open(zip_file) as extracted_file:
-                    df = spark.read.csv(extracted_file, header=True, inferSchema=True)
-                    
-                    transformed_df = df.select("column1", "column2")
-                    
-                    kwargs['ti'].xcom_push(key='transformed_df', value=transformed_df)
+    for file, dataset_name in target_files.items():
+        if file in files:
+            file_obj = s3_client.get_object(Bucket=BUCKET_NAME, Key=file)
+            zip_content = BytesIO(file_obj['Body'].read())
 
-# Función para cargar los datos transformados en PostgreSQL
+            with zipfile.ZipFile(zip_content, 'r') as zip_ref:
+                zip_files = zip_ref.namelist()
+
+                for zip_file in zip_files:
+                    with zip_ref.open(zip_file) as extracted_file:
+                        df = spark.read.csv(extracted_file, header=True, inferSchema=True)
+
+                        kwargs['ti'].xcom_push(key=dataset_name, value=df)
+
 def load_to_postgres(**kwargs):
-    # Obtener el DataFrame transformado desde XCom
-    transformed_df = kwargs['ti'].xcom_pull(key='transformed_df', task_ids='download_and_load_to_spark')
+    # Obtener DataFrames desde XCom
+    purchase_prices_df = kwargs['ti'].xcom_pull(key='purchasePrices', task_ids='download_and_load_to_spark')
+    sales_df = kwargs['ti'].xcom_pull(key='sales', task_ids='download_and_load_to_spark')
 
     # Conectar a PostgreSQL
     conn = psycopg2.connect(
@@ -67,44 +71,103 @@ def load_to_postgres(**kwargs):
     )
     cursor = conn.cursor()
 
+    # Crear tablas con estructura correcta
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS your_table_name (
-            column1 TEXT,
-            column2 TEXT
+        CREATE TABLE IF NOT EXISTS sales (
+            InventoryId TEXT,
+            Store INT,
+            Brand INT,
+            Description TEXT,
+            Size TEXT,
+            SalesQuantity INT,
+            SalesDollars FLOAT,
+            SalesPrice FLOAT,
+            SalesDate DATE,
+            Volume FLOAT,
+            Classification INT,
+            ExciseTax FLOAT,
+            VendorNo INT,
+            VendorName TEXT
         );
     """)
 
-    # Insertar los datos en PostgreSQL
-    for row in transformed_df.collect():
-        # Asegúrate de que el tipo de datos sea compatible con PostgreSQL
-        cursor.execute("INSERT INTO your_table_name (column1, column2) VALUES (%s, %s)", (row['column1'], row['column2']))
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS purchase_prices (
+            InventoryId TEXT,
+            Store INT,
+            Brand INT,
+            Description TEXT,
+            Size TEXT,
+            VendorNumber INT,
+            VendorName TEXT,
+            PONumber INT,
+            PODate DATE,
+            ReceivingDate DATE,
+            InvoiceDate DATE,
+            PayDate DATE,
+            PurchasePrice FLOAT,
+            Quantity INT,
+            Dollars FLOAT,
+            Classification INT
+        );
+    """)
+
+    # Insertar datos en la tabla sales
+    if sales_df:
+        for row in sales_df.collect():
+            cursor.execute("""
+                INSERT INTO sales (
+                    InventoryId, Store, Brand, Description, Size, SalesQuantity,
+                    SalesDollars, SalesPrice, SalesDate, Volume, Classification,
+                    ExciseTax, VendorNo, VendorName
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (
+                row["InventoryId"], row["Store"], row["Brand"], row["Description"], row["Size"],
+                row["SalesQuantity"], row["SalesDollars"], row["SalesPrice"], row["SalesDate"],
+                row["Volume"], row["Classification"], row["ExciseTax"], row["VendorNo"], row["VendorName"]
+            ))
+
+    # Insertar datos en la tabla purchase_prices
+    if purchase_prices_df:
+        for row in purchase_prices_df.collect():
+            cursor.execute("""
+                INSERT INTO purchase_prices (
+                    InventoryId, Store, Brand, Description, Size, VendorNumber,
+                    VendorName, PONumber, PODate, ReceivingDate, InvoiceDate,
+                    PayDate, PurchasePrice, Quantity, Dollars, Classification
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (
+                row["InventoryId"], row["Store"], row["Brand"], row["Description"], row["Size"],
+                row["VendorNumber"], row["VendorName"], row["PONumber"], row["PODate"], row["ReceivingDate"],
+                row["InvoiceDate"], row["PayDate"], row["PurchasePrice"], row["Quantity"], row["Dollars"],
+                row["Classification"]
+            ))
 
     conn.commit()
     cursor.close()
+    conn.close()
 
-# Definir el DAG
+
 dag = DAG(
     'data_transformation_dag',
     description='DAG para transformar datos con Spark y cargarlos en PostgreSQL',
-    schedule_interval='@daily',  # Ejecutar diariamente
+    schedule_interval='@daily',  
     start_date=datetime(2023, 1, 1),
     catchup=False,
 )
 
-# Definir las tareas del DAG
 download_and_load_task = PythonOperator(
     task_id='download_and_load_to_spark',
     python_callable=download_and_load_to_spark,
-    provide_context=True,  # Asegúrate de que puedas usar XCom
+    provide_context=True,  
     dag=dag,
 )
 
 load_to_postgres_task = PythonOperator(
     task_id='load_to_postgres',
     python_callable=load_to_postgres,
-    provide_context=True,  # Para acceder a XCom
+    provide_context=True,  
     dag=dag,
 )
 
-# Orden de ejecución de las tareas
 download_and_load_task >> load_to_postgres_task

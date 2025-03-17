@@ -1,1 +1,1 @@
-{"_invocation_id": "3300e413-6482-4c53-85bd-b589d861f683", "linked": {}}
+{"_invocation_id": "73f40157-a96f-4297-a4e0-be4e32ca44cf", "linked": {"0": {"name": "model.amn_dbt.least_profitability", "type": "model"}, "1": {"name": "model.amn_dbt.profit_and_margin", "type": "model", "succ": [0]}, "2": {"name": "model.amn_dbt.sales", "type": "model", "succ": [1]}, "3": {"name": "model.amn_dbt.purchase_prices", "type": "model", "succ": [1]}}}

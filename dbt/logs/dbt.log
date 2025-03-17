@@ -165,3 +165,1615 @@ There are 1 unused configuration paths:
 [0m02:15:10.961844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8bfafa480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8bf2638c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc8bfdffd40>]}
 [0m02:15:10.963848 [debug] [MainThread]: Flushing usage events
 [0m02:15:11.704844 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:10:19.797336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb203b65ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2043b6db0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb203b65e80>]}
+
+
+============================== 10:10:19.813010 | 76604bdf-f15c-441c-86a3-c3d2d6503099 ==============================
+[0m10:10:19.813010 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:10:19.821624 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m10:10:21.831161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '76604bdf-f15c-441c-86a3-c3d2d6503099', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2045e4fb0>]}
+[0m10:10:22.456596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '76604bdf-f15c-441c-86a3-c3d2d6503099', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2049dbe00>]}
+[0m10:10:22.464886 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:10:23.116954 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:10:24.309687 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 0 files changed.
+[0m10:10:24.322673 [debug] [MainThread]: Partial parsing: added file: amn_dbt://models/profit_and_margin.sql
+[0m10:10:24.328510 [debug] [MainThread]: Partial parsing: added file: amn_dbt://models/least_profitability.sql
+[0m10:10:25.796179 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.amn_dbt.profit_and_margin' (models/profit_and_margin.sql) depends on a node named 'Sales' which was not found
+[0m10:10:25.807715 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 6.551073, "process_in_blocks": "101512", "process_kernel_time": 1.28442, "process_mem_max_rss": "99076", "process_out_blocks": "0", "process_user_time": 10.14178}
+[0m10:10:25.814945 [debug] [MainThread]: Command `dbt run` failed at 10:10:25.814391 after 6.56 seconds
+[0m10:10:25.818260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2046fc800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2021015e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2039cdbb0>]}
+[0m10:10:25.828090 [debug] [MainThread]: Flushing usage events
+[0m10:10:26.600691 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:20:30.507884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b708e6c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b6c58ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b6664860>]}
+
+
+============================== 10:20:30.522193 | cadc75b1-48af-4dd4-a905-a29defe0f6c5 ==============================
+[0m10:20:30.522193 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:20:30.528177 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/usr/app/dbt', 'log_path': '/usr/app/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:20:31.625811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cadc75b1-48af-4dd4-a905-a29defe0f6c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b6dbd5e0>]}
+[0m10:20:31.934640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cadc75b1-48af-4dd4-a905-a29defe0f6c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b65255e0>]}
+[0m10:20:31.951799 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:20:32.373358 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:20:32.649211 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m10:20:32.652926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'cadc75b1-48af-4dd4-a905-a29defe0f6c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b4c2ec60>]}
+[0m10:20:35.768210 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.amn_dbt.least_profitability' (models/least_profitability.sql) depends on a node named 'sales' which was not found
+[0m10:20:35.772038 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.6733317, "process_in_blocks": "0", "process_kernel_time": 0.787291, "process_mem_max_rss": "101252", "process_out_blocks": "0", "process_user_time": 8.510722}
+[0m10:20:35.775530 [debug] [MainThread]: Command `dbt run` failed at 10:20:35.775117 after 5.68 seconds
+[0m10:20:35.777924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b7114920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b4bff500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8b64fd5e0>]}
+[0m10:20:35.780152 [debug] [MainThread]: Flushing usage events
+[0m10:20:36.673320 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:25:37.888656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4716ff30e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f47153c4500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4715545460>]}
+
+
+============================== 10:25:37.900928 | 1d503c36-6bfe-4e02-8a9d-1cac3a2e4bca ==============================
+[0m10:25:37.900928 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:25:37.905715 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/usr/app/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/usr/app/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:25:38.771704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1d503c36-6bfe-4e02-8a9d-1cac3a2e4bca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4716d27410>]}
+[0m10:25:39.099309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1d503c36-6bfe-4e02-8a9d-1cac3a2e4bca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4715f29730>]}
+[0m10:25:39.104261 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:25:39.516315 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:25:39.807292 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m10:25:39.816782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1d503c36-6bfe-4e02-8a9d-1cac3a2e4bca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f47155a4080>]}
+[0m10:25:43.432473 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.amn_dbt.profit_and_margin' (models/profit_and_margin.sql) depends on a node named 'purchase_prices' which was not found
+[0m10:25:43.437995 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.845397, "process_in_blocks": "0", "process_kernel_time": 0.568102, "process_mem_max_rss": "99176", "process_out_blocks": "0", "process_user_time": 9.288976}
+[0m10:25:43.441546 [debug] [MainThread]: Command `dbt run` failed at 10:25:43.440902 after 5.85 seconds
+[0m10:25:43.444748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f471563eff0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f471368ed80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f471359ef00>]}
+[0m10:25:43.449221 [debug] [MainThread]: Flushing usage events
+[0m10:25:44.213394 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:34:56.707412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638b6cc3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638b0344a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638b098aa0>]}
+
+
+============================== 10:34:56.718431 | 6e4db555-fc4f-42ad-ae76-e70b0271d1f2 ==============================
+[0m10:34:56.718431 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:34:56.725482 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/app/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:34:57.783193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6e4db555-fc4f-42ad-ae76-e70b0271d1f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6389582ba0>]}
+[0m10:34:58.182789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6e4db555-fc4f-42ad-ae76-e70b0271d1f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638b39f5c0>]}
+[0m10:34:58.194689 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:34:58.511342 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:34:58.694603 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m10:34:58.702778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6e4db555-fc4f-42ad-ae76-e70b0271d1f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638b39fe30>]}
+[0m10:35:02.318738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6e4db555-fc4f-42ad-ae76-e70b0271d1f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f63891ef320>]}
+[0m10:35:02.480313 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:35:02.489757 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:35:02.541162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6e4db555-fc4f-42ad-ae76-e70b0271d1f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638930cb30>]}
+[0m10:35:02.543023 [info ] [MainThread]: Found 4 models, 429 macros
+[0m10:35:02.545199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6e4db555-fc4f-42ad-ae76-e70b0271d1f2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6389165ee0>]}
+[0m10:35:02.552557 [info ] [MainThread]: 
+[0m10:35:02.554785 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:35:02.557054 [info ] [MainThread]: 
+[0m10:35:02.560224 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:35:02.577684 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m10:35:02.672122 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m10:35:02.674180 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:35:02.675836 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:35:02.693935 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "postgresql-data" (172.20.0.3), port 5432 failed: FATAL:  database "amn_datawarehouse" does not exist
+
+[0m10:35:02.705360 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:35:02.707710 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:35:02.710564 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m10:35:02.712701 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:35:02.714471 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m10:35:02.716574 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:35:02.717852 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m10:35:02.719202 [info ] [MainThread]: 
+[0m10:35:02.720940 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.16 seconds (0.16s).
+[0m10:35:02.724178 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "postgresql-data" (172.20.0.3), port 5432 failed: FATAL:  database "amn_datawarehouse" does not exist
+  
+[0m10:35:02.727980 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 6.4769588, "process_in_blocks": "6240", "process_kernel_time": 0.478932, "process_mem_max_rss": "110596", "process_out_blocks": "0", "process_user_time": 10.167342}
+[0m10:35:02.731388 [debug] [MainThread]: Command `dbt run` failed at 10:35:02.730852 after 6.48 seconds
+[0m10:35:02.733750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638b614fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f638926aa50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6389528f50>]}
+[0m10:35:02.735552 [debug] [MainThread]: Flushing usage events
+[0m10:35:03.461438 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:42:46.276424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129fe36b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129fe36ab0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129fe36ba0>]}
+
+
+============================== 10:42:46.312256 | 630faf40-0a27-4f83-863e-70d00842e482 ==============================
+[0m10:42:46.312256 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:42:46.325060 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:42:47.246837 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '630faf40-0a27-4f83-863e-70d00842e482', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f12a010fb90>]}
+[0m10:42:47.629751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '630faf40-0a27-4f83-863e-70d00842e482', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129f25ab70>]}
+[0m10:42:47.637042 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:42:48.005445 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:42:48.413570 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:42:48.415388 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:42:48.494424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '630faf40-0a27-4f83-863e-70d00842e482', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129da35520>]}
+[0m10:42:48.764140 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:42:48.783002 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:42:48.839742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '630faf40-0a27-4f83-863e-70d00842e482', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129d7ec5c0>]}
+[0m10:42:48.843076 [info ] [MainThread]: Found 4 models, 429 macros
+[0m10:42:48.846496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '630faf40-0a27-4f83-863e-70d00842e482', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129d912570>]}
+[0m10:42:48.855450 [info ] [MainThread]: 
+[0m10:42:48.858980 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:42:48.862446 [info ] [MainThread]: 
+[0m10:42:48.868774 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:42:48.897292 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m10:42:49.078784 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m10:42:49.096010 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:42:49.101850 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:42:49.138997 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "postgresql-data" (172.20.0.3), port 5432 failed: FATAL:  database "amn_datawarehouse" does not exist
+
+[0m10:42:49.166816 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:42:49.173532 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:42:49.178575 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m10:42:49.185174 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:42:49.188753 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m10:42:49.194594 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:42:49.198579 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m10:42:49.201635 [info ] [MainThread]: 
+[0m10:42:49.206433 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m10:42:49.211165 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "postgresql-data" (172.20.0.3), port 5432 failed: FATAL:  database "amn_datawarehouse" does not exist
+  
+[0m10:42:49.221606 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.3473456, "process_in_blocks": "0", "process_kernel_time": 0.600244, "process_mem_max_rss": "105188", "process_out_blocks": "0", "process_user_time": 7.092892}
+[0m10:42:49.229084 [debug] [MainThread]: Command `dbt run` failed at 10:42:49.228477 after 3.36 seconds
+[0m10:42:49.235862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129f43f890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129d7e56d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f129d9125a0>]}
+[0m10:42:49.245878 [debug] [MainThread]: Flushing usage events
+[0m10:42:50.067675 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:47:00.243503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7be63e900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bdb6c560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bde08350>]}
+
+
+============================== 10:47:00.260106 | 43d181a6-316b-4ae4-8935-9591a4dba7df ==============================
+[0m10:47:00.260106 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:47:00.272585 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/dbt/logs', 'profiles_dir': '/usr/app/dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m10:47:01.508146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '43d181a6-316b-4ae4-8935-9591a4dba7df', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bd8b2d80>]}
+[0m10:47:01.908324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '43d181a6-316b-4ae4-8935-9591a4dba7df', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bd7daf90>]}
+[0m10:47:01.913071 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:47:02.203964 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:47:02.608120 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:47:02.610340 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:47:02.716000 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '43d181a6-316b-4ae4-8935-9591a4dba7df', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bbf65310>]}
+[0m10:47:02.987374 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:47:03.005396 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:47:03.095742 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '43d181a6-316b-4ae4-8935-9591a4dba7df', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bbd188f0>]}
+[0m10:47:03.099098 [info ] [MainThread]: Found 4 models, 429 macros
+[0m10:47:03.103570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '43d181a6-316b-4ae4-8935-9591a4dba7df', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bbf657f0>]}
+[0m10:47:03.113445 [info ] [MainThread]: 
+[0m10:47:03.118292 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:47:03.121802 [info ] [MainThread]: 
+[0m10:47:03.126336 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:47:03.147574 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m10:47:03.264102 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m10:47:03.266316 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:47:03.268732 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:47:03.284390 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "postgresql-data" (172.20.0.2), port 5432 failed: FATAL:  database "amn_datawarehouse" does not exist
+
+[0m10:47:03.306889 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:47:03.311737 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:47:03.315027 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m10:47:03.318288 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:47:03.321561 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m10:47:03.325209 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:47:03.328246 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m10:47:03.331705 [info ] [MainThread]: 
+[0m10:47:03.335846 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.21 seconds (0.21s).
+[0m10:47:03.341486 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "postgresql-data" (172.20.0.2), port 5432 failed: FATAL:  database "amn_datawarehouse" does not exist
+  
+[0m10:47:03.347520 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.7316215, "process_in_blocks": "0", "process_kernel_time": 0.631597, "process_mem_max_rss": "105176", "process_out_blocks": "0", "process_user_time": 7.529041}
+[0m10:47:03.353027 [debug] [MainThread]: Command `dbt run` failed at 10:47:03.352489 after 3.74 seconds
+[0m10:47:03.357712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bd88cf50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bd8258b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7bbe43f80>]}
+[0m10:47:03.362056 [debug] [MainThread]: Flushing usage events
+[0m10:47:04.118425 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:53:16.915252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a523fbb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a52e03c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a52e03140>]}
+
+
+============================== 10:53:16.938593 | 3638cc67-3285-4fe8-bc84-ca245d073196 ==============================
+[0m10:53:16.938593 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:53:16.945137 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/usr/app/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m10:53:18.106152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3638cc67-3285-4fe8-bc84-ca245d073196', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a527048c0>]}
+[0m10:53:18.439669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3638cc67-3285-4fe8-bc84-ca245d073196', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a522dad80>]}
+[0m10:53:18.457122 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:53:18.835389 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:53:19.560964 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:53:19.564343 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:53:19.805560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3638cc67-3285-4fe8-bc84-ca245d073196', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a508e8050>]}
+[0m10:53:20.239118 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:53:20.279288 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:53:20.376410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3638cc67-3285-4fe8-bc84-ca245d073196', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a50669850>]}
+[0m10:53:20.380026 [info ] [MainThread]: Found 4 models, 429 macros
+[0m10:53:20.385821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3638cc67-3285-4fe8-bc84-ca245d073196', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a50715070>]}
+[0m10:53:20.397397 [info ] [MainThread]: 
+[0m10:53:20.407091 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:53:20.414319 [info ] [MainThread]: 
+[0m10:53:20.439929 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:53:20.497232 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m10:53:20.810579 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m10:53:20.812775 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:53:20.814696 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:53:24.143113 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+could not translate host name "postgresql-data" to address: Name or service not known
+
+[0m10:53:27.441785 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:53:27.446538 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:53:27.450215 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m10:53:27.453146 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m10:53:27.456284 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m10:53:27.461274 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:53:27.464153 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m10:53:27.466418 [info ] [MainThread]: 
+[0m10:53:27.470529 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 7.03 seconds (7.03s).
+[0m10:53:27.478181 [error] [MainThread]: Encountered an error:
+Database Error
+  could not translate host name "postgresql-data" to address: Name or service not known
+  
+[0m10:53:27.484877 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 10.824073, "process_in_blocks": "1456", "process_kernel_time": 0.875476, "process_mem_max_rss": "103876", "process_out_blocks": "1600", "process_user_time": 9.99672}
+[0m10:53:27.489678 [debug] [MainThread]: Command `dbt run` failed at 10:53:27.489025 after 10.83 seconds
+[0m10:53:27.494165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a52374cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a52098f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a508e89e0>]}
+[0m10:53:27.500592 [debug] [MainThread]: Flushing usage events
+[0m10:53:28.263977 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:55:30.759770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2bfe8440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2bacbc80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2c24b440>]}
+
+
+============================== 10:55:30.779094 | 09f23bce-7fe5-4ca8-8a95-e5a324a7e663 ==============================
+[0m10:55:30.779094 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:55:30.788233 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/usr/app/dbt/logs', 'debug': 'False', 'profiles_dir': '/usr/app/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:55:31.642196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2bd41df0>]}
+[0m10:55:31.928673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2b9b6300>]}
+[0m10:55:31.937067 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:55:32.290626 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:55:32.680761 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:55:32.682839 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:55:32.755254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae29f0e630>]}
+[0m10:55:32.970337 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:55:32.983180 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:55:33.026628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae29bf8470>]}
+[0m10:55:33.029488 [info ] [MainThread]: Found 4 models, 429 macros
+[0m10:55:33.032359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2c3e05c0>]}
+[0m10:55:33.039961 [info ] [MainThread]: 
+[0m10:55:33.042640 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:55:33.045488 [info ] [MainThread]: 
+[0m10:55:33.050192 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:55:33.071681 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m10:55:33.202551 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m10:55:33.204057 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:55:33.205705 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:55:33.233001 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.027 seconds
+[0m10:55:33.238440 [debug] [ThreadPool]: On list_amn_datawarehouse: Close
+[0m10:55:33.245287 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_amn_datawarehouse, now list_amn_datawarehouse_public)
+[0m10:55:33.266413 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m10:55:33.268776 [debug] [ThreadPool]: On list_amn_datawarehouse_public: BEGIN
+[0m10:55:33.271194 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:55:33.290906 [debug] [ThreadPool]: SQL status: BEGIN in 0.020 seconds
+[0m10:55:33.293713 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m10:55:33.296212 [debug] [ThreadPool]: On list_amn_datawarehouse_public: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse_public"} */
+select
+      'amn_datawarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m10:55:33.306260 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.007 seconds
+[0m10:55:33.312308 [debug] [ThreadPool]: On list_amn_datawarehouse_public: ROLLBACK
+[0m10:55:33.314706 [debug] [ThreadPool]: On list_amn_datawarehouse_public: Close
+[0m10:55:33.333653 [debug] [MainThread]: Using postgres connection "master"
+[0m10:55:33.335538 [debug] [MainThread]: On master: BEGIN
+[0m10:55:33.337155 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:55:33.351527 [debug] [MainThread]: SQL status: BEGIN in 0.014 seconds
+[0m10:55:33.354002 [debug] [MainThread]: Using postgres connection "master"
+[0m10:55:33.356586 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:55:33.364457 [debug] [MainThread]: SQL status: SELECT 0 in 0.005 seconds
+[0m10:55:33.368155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae28f99a90>]}
+[0m10:55:33.370443 [debug] [MainThread]: On master: ROLLBACK
+[0m10:55:33.372353 [debug] [MainThread]: Using postgres connection "master"
+[0m10:55:33.373876 [debug] [MainThread]: On master: BEGIN
+[0m10:55:33.376177 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m10:55:33.379093 [debug] [MainThread]: On master: COMMIT
+[0m10:55:33.382044 [debug] [MainThread]: Using postgres connection "master"
+[0m10:55:33.384348 [debug] [MainThread]: On master: COMMIT
+[0m10:55:33.387730 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m10:55:33.390406 [debug] [MainThread]: On master: Close
+[0m10:55:33.395600 [debug] [Thread-1 (]: Began running node model.amn_dbt.purchase_prices
+[0m10:55:33.398781 [info ] [Thread-1 (]: 1 of 4 START sql table model public.purchase_prices ............................ [RUN]
+[0m10:55:33.401882 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_amn_datawarehouse_public, now model.amn_dbt.purchase_prices)
+[0m10:55:33.403907 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.purchase_prices
+[0m10:55:33.421591 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.purchase_prices"
+[0m10:55:33.444093 [debug] [Thread-1 (]: Began executing node model.amn_dbt.purchase_prices
+[0m10:55:33.531152 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.purchase_prices"
+[0m10:55:33.545832 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m10:55:33.547426 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: BEGIN
+[0m10:55:33.549151 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:55:33.560967 [debug] [Thread-1 (]: SQL status: BEGIN in 0.012 seconds
+[0m10:55:33.563008 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m10:55:33.564900 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.purchase_prices"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."purchase_prices__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    Brand,
+    PurchasePrice
+FROM public.purchase_prices;
+  );
+  
+[0m10:55:33.567563 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 15: FROM public.purchase_prices;
+                                    ^
+
+[0m10:55:33.569777 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: ROLLBACK
+[0m10:55:33.571969 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: Close
+[0m10:55:33.589928 [debug] [Thread-1 (]: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m10:55:33.594633 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2b669040>]}
+[0m10:55:33.598764 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model public.purchase_prices ................... [[31mERROR[0m in 0.19s]
+[0m10:55:33.602577 [debug] [Thread-1 (]: Finished running node model.amn_dbt.purchase_prices
+[0m10:55:33.605451 [debug] [Thread-1 (]: Began running node model.amn_dbt.sales
+[0m10:55:33.607421 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.purchase_prices' to be skipped because of status 'error'.  Reason: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql.
+[0m10:55:33.609972 [info ] [Thread-1 (]: 2 of 4 START sql table model public.sales ...................................... [RUN]
+[0m10:55:33.618371 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.amn_dbt.purchase_prices, now model.amn_dbt.sales)
+[0m10:55:33.620645 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.sales
+[0m10:55:33.625811 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.sales"
+[0m10:55:33.640452 [debug] [Thread-1 (]: Began executing node model.amn_dbt.sales
+[0m10:55:33.650222 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.sales"
+[0m10:55:33.665487 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m10:55:33.667973 [debug] [Thread-1 (]: On model.amn_dbt.sales: BEGIN
+[0m10:55:33.670325 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:55:33.686224 [debug] [Thread-1 (]: SQL status: BEGIN in 0.016 seconds
+[0m10:55:33.688587 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m10:55:33.690898 [debug] [Thread-1 (]: On model.amn_dbt.sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.sales"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    InventoryId,
+    Store,
+    Description AS SalesDescription, 
+    SalesPrice,
+    Brand
+FROM public.sales;
+  );
+  
+[0m10:55:33.693698 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 18: FROM public.sales;
+                          ^
+
+[0m10:55:33.696431 [debug] [Thread-1 (]: On model.amn_dbt.sales: ROLLBACK
+[0m10:55:33.700379 [debug] [Thread-1 (]: On model.amn_dbt.sales: Close
+[0m10:55:33.707279 [debug] [Thread-1 (]: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m10:55:33.709406 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '09f23bce-7fe5-4ca8-8a95-e5a324a7e663', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae284c3710>]}
+[0m10:55:33.712265 [error] [Thread-1 (]: 2 of 4 ERROR creating sql table model public.sales ............................. [[31mERROR[0m in 0.09s]
+[0m10:55:33.717270 [debug] [Thread-1 (]: Finished running node model.amn_dbt.sales
+[0m10:55:33.720481 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.sales' to be skipped because of status 'error'.  Reason: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql.
+[0m10:55:33.723507 [debug] [Thread-1 (]: Began running node model.amn_dbt.profit_and_margin
+[0m10:55:33.725689 [info ] [Thread-1 (]: 3 of 4 SKIP relation public.profit_and_margin .................................. [[33mSKIP[0m]
+[0m10:55:33.728357 [debug] [Thread-1 (]: Finished running node model.amn_dbt.profit_and_margin
+[0m10:55:33.733684 [debug] [Thread-1 (]: Began running node model.amn_dbt.least_profitability
+[0m10:55:33.735802 [info ] [Thread-1 (]: 4 of 4 SKIP relation public.least_profitability ................................ [[33mSKIP[0m]
+[0m10:55:33.738325 [debug] [Thread-1 (]: Finished running node model.amn_dbt.least_profitability
+[0m10:55:33.742834 [debug] [MainThread]: Using postgres connection "master"
+[0m10:55:33.745118 [debug] [MainThread]: On master: BEGIN
+[0m10:55:33.748917 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:55:33.765314 [debug] [MainThread]: SQL status: BEGIN in 0.016 seconds
+[0m10:55:33.768402 [debug] [MainThread]: On master: COMMIT
+[0m10:55:33.771671 [debug] [MainThread]: Using postgres connection "master"
+[0m10:55:33.773907 [debug] [MainThread]: On master: COMMIT
+[0m10:55:33.776349 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m10:55:33.778359 [debug] [MainThread]: On master: Close
+[0m10:55:33.782395 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:55:33.785034 [debug] [MainThread]: Connection 'model.amn_dbt.sales' was properly closed.
+[0m10:55:33.786831 [info ] [MainThread]: 
+[0m10:55:33.788743 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.74 seconds (0.74s).
+[0m10:55:33.792641 [debug] [MainThread]: Command end result
+[0m10:55:33.875330 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:55:33.888372 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:55:33.914866 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/target/run_results.json
+[0m10:55:33.917158 [info ] [MainThread]: 
+[0m10:55:33.919427 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m10:55:33.921774 [info ] [MainThread]: 
+[0m10:55:33.925217 [error] [MainThread]:   Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m10:55:33.928435 [info ] [MainThread]: 
+[0m10:55:33.932939 [error] [MainThread]:   Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m10:55:33.935971 [info ] [MainThread]: 
+[0m10:55:33.939254 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m10:55:33.943526 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.494322, "process_in_blocks": "376", "process_kernel_time": 0.576149, "process_mem_max_rss": "108324", "process_out_blocks": "0", "process_user_time": 6.238306}
+[0m10:55:33.946911 [debug] [MainThread]: Command `dbt run` failed at 10:55:33.946373 after 3.50 seconds
+[0m10:55:33.950028 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2be6f200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2bc8ea50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fae2b76ce90>]}
+[0m10:55:33.952114 [debug] [MainThread]: Flushing usage events
+[0m10:55:34.687440 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:58:43.704297 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f394f7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f394dca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f394dcd0>]}
+
+
+============================== 10:58:43.735249 | 9860d757-04a6-4881-8799-d252c14b81fe ==============================
+[0m10:58:43.735249 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:58:43.738430 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/app/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:58:44.673223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f4371af0>]}
+[0m10:58:45.037438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f38b2ff0>]}
+[0m10:58:45.043405 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:58:45.510696 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m10:58:45.769351 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m10:58:45.772425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f3dbbd10>]}
+[0m10:58:48.550239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f1c03140>]}
+[0m10:58:48.702261 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:58:48.719292 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:58:48.797314 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f1d98b30>]}
+[0m10:58:48.800982 [info ] [MainThread]: Found 4 models, 429 macros
+[0m10:58:48.806563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f1cb72c0>]}
+[0m10:58:48.819547 [info ] [MainThread]: 
+[0m10:58:48.822535 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:58:48.835776 [info ] [MainThread]: 
+[0m10:58:48.911332 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:58:48.942379 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m10:58:49.051713 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m10:58:49.053539 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:58:49.055171 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:58:49.075009 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.020 seconds
+[0m10:58:49.078904 [debug] [ThreadPool]: On list_amn_datawarehouse: Close
+[0m10:58:49.083083 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_amn_datawarehouse, now list_amn_datawarehouse_public)
+[0m10:58:49.096951 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m10:58:49.099029 [debug] [ThreadPool]: On list_amn_datawarehouse_public: BEGIN
+[0m10:58:49.101114 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:58:49.118988 [debug] [ThreadPool]: SQL status: BEGIN in 0.018 seconds
+[0m10:58:49.121538 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m10:58:49.123937 [debug] [ThreadPool]: On list_amn_datawarehouse_public: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse_public"} */
+select
+      'amn_datawarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m10:58:49.133850 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.008 seconds
+[0m10:58:49.139861 [debug] [ThreadPool]: On list_amn_datawarehouse_public: ROLLBACK
+[0m10:58:49.142424 [debug] [ThreadPool]: On list_amn_datawarehouse_public: Close
+[0m10:58:49.153519 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:49.155693 [debug] [MainThread]: On master: BEGIN
+[0m10:58:49.157354 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:58:49.170624 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m10:58:49.173403 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:49.176890 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:58:49.185382 [debug] [MainThread]: SQL status: SELECT 0 in 0.006 seconds
+[0m10:58:49.191681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f1cb48f0>]}
+[0m10:58:49.193811 [debug] [MainThread]: On master: ROLLBACK
+[0m10:58:49.195780 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:49.197498 [debug] [MainThread]: On master: BEGIN
+[0m10:58:49.199637 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m10:58:49.201880 [debug] [MainThread]: On master: COMMIT
+[0m10:58:49.207717 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:49.210508 [debug] [MainThread]: On master: COMMIT
+[0m10:58:49.213186 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m10:58:49.215354 [debug] [MainThread]: On master: Close
+[0m10:58:49.220367 [debug] [Thread-1 (]: Began running node model.amn_dbt.purchase_prices
+[0m10:58:49.224549 [info ] [Thread-1 (]: 1 of 4 START sql table model public.purchase_prices ............................ [RUN]
+[0m10:58:49.227066 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_amn_datawarehouse_public, now model.amn_dbt.purchase_prices)
+[0m10:58:49.229513 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.purchase_prices
+[0m10:58:49.246333 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.purchase_prices"
+[0m10:58:49.256398 [debug] [Thread-1 (]: Began executing node model.amn_dbt.purchase_prices
+[0m10:58:49.341784 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.purchase_prices"
+[0m10:58:49.352319 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m10:58:49.354762 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: BEGIN
+[0m10:58:49.357538 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:58:49.371507 [debug] [Thread-1 (]: SQL status: BEGIN in 0.014 seconds
+[0m10:58:49.373628 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m10:58:49.375831 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.purchase_prices"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."purchase_prices__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    Brand,
+    PurchasePrice
+FROM public.purchase_prices;
+  );
+  
+[0m10:58:49.378623 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 15: FROM public.purchase_prices;
+                                    ^
+
+[0m10:58:49.380876 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: ROLLBACK
+[0m10:58:49.383399 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: Close
+[0m10:58:49.392953 [debug] [Thread-1 (]: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m10:58:49.399427 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f00c8b90>]}
+[0m10:58:49.401935 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model public.purchase_prices ................... [[31mERROR[0m in 0.17s]
+[0m10:58:49.405744 [debug] [Thread-1 (]: Finished running node model.amn_dbt.purchase_prices
+[0m10:58:49.407907 [debug] [Thread-1 (]: Began running node model.amn_dbt.sales
+[0m10:58:49.409206 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.purchase_prices' to be skipped because of status 'error'.  Reason: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql.
+[0m10:58:49.411803 [info ] [Thread-1 (]: 2 of 4 START sql table model public.sales ...................................... [RUN]
+[0m10:58:49.418825 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.amn_dbt.purchase_prices, now model.amn_dbt.sales)
+[0m10:58:49.421298 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.sales
+[0m10:58:49.428680 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.sales"
+[0m10:58:49.442051 [debug] [Thread-1 (]: Began executing node model.amn_dbt.sales
+[0m10:58:49.452918 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.sales"
+[0m10:58:49.466121 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m10:58:49.468230 [debug] [Thread-1 (]: On model.amn_dbt.sales: BEGIN
+[0m10:58:49.470060 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m10:58:49.489343 [debug] [Thread-1 (]: SQL status: BEGIN in 0.019 seconds
+[0m10:58:49.492531 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m10:58:49.495204 [debug] [Thread-1 (]: On model.amn_dbt.sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.sales"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    InventoryId,
+    Store,
+    Description AS SalesDescription, 
+    SalesPrice,
+    Brand
+FROM public.sales;
+  );
+  
+[0m10:58:49.498310 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 18: FROM public.sales;
+                          ^
+
+[0m10:58:49.500641 [debug] [Thread-1 (]: On model.amn_dbt.sales: ROLLBACK
+[0m10:58:49.502919 [debug] [Thread-1 (]: On model.amn_dbt.sales: Close
+[0m10:58:49.512607 [debug] [Thread-1 (]: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m10:58:49.515547 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9860d757-04a6-4881-8799-d252c14b81fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78ea654e00>]}
+[0m10:58:49.519091 [error] [Thread-1 (]: 2 of 4 ERROR creating sql table model public.sales ............................. [[31mERROR[0m in 0.10s]
+[0m10:58:49.522522 [debug] [Thread-1 (]: Finished running node model.amn_dbt.sales
+[0m10:58:49.526368 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.sales' to be skipped because of status 'error'.  Reason: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql.
+[0m10:58:49.529732 [debug] [Thread-1 (]: Began running node model.amn_dbt.profit_and_margin
+[0m10:58:49.531938 [info ] [Thread-1 (]: 3 of 4 SKIP relation public.profit_and_margin .................................. [[33mSKIP[0m]
+[0m10:58:49.534681 [debug] [Thread-1 (]: Finished running node model.amn_dbt.profit_and_margin
+[0m10:58:49.538439 [debug] [Thread-1 (]: Began running node model.amn_dbt.least_profitability
+[0m10:58:49.541405 [info ] [Thread-1 (]: 4 of 4 SKIP relation public.least_profitability ................................ [[33mSKIP[0m]
+[0m10:58:49.545034 [debug] [Thread-1 (]: Finished running node model.amn_dbt.least_profitability
+[0m10:58:49.548933 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:49.550991 [debug] [MainThread]: On master: BEGIN
+[0m10:58:49.552784 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:58:49.568602 [debug] [MainThread]: SQL status: BEGIN in 0.016 seconds
+[0m10:58:49.571060 [debug] [MainThread]: On master: COMMIT
+[0m10:58:49.574007 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:49.576968 [debug] [MainThread]: On master: COMMIT
+[0m10:58:49.579398 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m10:58:49.581390 [debug] [MainThread]: On master: Close
+[0m10:58:49.583354 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:58:49.585224 [debug] [MainThread]: Connection 'model.amn_dbt.sales' was properly closed.
+[0m10:58:49.587167 [info ] [MainThread]: 
+[0m10:58:49.590125 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.68 seconds (0.68s).
+[0m10:58:49.595320 [debug] [MainThread]: Command end result
+[0m10:58:49.766410 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m10:58:49.780185 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m10:58:49.805282 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/target/run_results.json
+[0m10:58:49.807114 [info ] [MainThread]: 
+[0m10:58:49.809481 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m10:58:49.812045 [info ] [MainThread]: 
+[0m10:58:49.815264 [error] [MainThread]:   Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m10:58:49.818244 [info ] [MainThread]: 
+[0m10:58:49.821216 [error] [MainThread]:   Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m10:58:49.824018 [info ] [MainThread]: 
+[0m10:58:49.827261 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m10:58:49.831137 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 6.5534167, "process_in_blocks": "0", "process_kernel_time": 0.503498, "process_mem_max_rss": "109412", "process_out_blocks": "0", "process_user_time": 9.334866}
+[0m10:58:49.834471 [debug] [MainThread]: Command `dbt run` failed at 10:58:49.833862 after 6.56 seconds
+[0m10:58:49.837338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f3d531d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f1c04d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78f1c05580>]}
+[0m10:58:49.840303 [debug] [MainThread]: Flushing usage events
+[0m10:58:50.582234 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:02:06.401797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a6058c9e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5fdb13a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a603c8bc0>]}
+
+
+============================== 11:02:06.419027 | 769c6a97-43a0-4643-90ac-cefa2fa8440e ==============================
+[0m11:02:06.419027 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:02:06.423168 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/app/dbt/logs', 'profiles_dir': '/usr/app/dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m11:02:07.114328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a603caf60>]}
+[0m11:02:07.509594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a605e7c20>]}
+[0m11:02:07.527995 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:02:07.859028 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:02:08.204544 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:02:08.209983 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:02:08.297745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5e12de50>]}
+[0m11:02:08.563136 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:02:08.579827 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:02:08.635134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5de1c7d0>]}
+[0m11:02:08.637965 [info ] [MainThread]: Found 4 models, 429 macros
+[0m11:02:08.640602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5e0650d0>]}
+[0m11:02:08.647957 [info ] [MainThread]: 
+[0m11:02:08.651415 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:02:08.654536 [info ] [MainThread]: 
+[0m11:02:08.658480 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:02:08.676697 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m11:02:08.784679 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m11:02:08.786915 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:02:08.788816 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:02:08.814342 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.025 seconds
+[0m11:02:08.819486 [debug] [ThreadPool]: On list_amn_datawarehouse: Close
+[0m11:02:08.825037 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_amn_datawarehouse, now list_amn_datawarehouse_public)
+[0m11:02:08.844364 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m11:02:08.846725 [debug] [ThreadPool]: On list_amn_datawarehouse_public: BEGIN
+[0m11:02:08.849143 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:02:08.873718 [debug] [ThreadPool]: SQL status: BEGIN in 0.024 seconds
+[0m11:02:08.877873 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m11:02:08.881158 [debug] [ThreadPool]: On list_amn_datawarehouse_public: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse_public"} */
+select
+      'amn_datawarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:02:08.893163 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.009 seconds
+[0m11:02:08.907676 [debug] [ThreadPool]: On list_amn_datawarehouse_public: ROLLBACK
+[0m11:02:08.915013 [debug] [ThreadPool]: On list_amn_datawarehouse_public: Close
+[0m11:02:08.940815 [debug] [MainThread]: Using postgres connection "master"
+[0m11:02:08.945486 [debug] [MainThread]: On master: BEGIN
+[0m11:02:08.951179 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:02:08.973609 [debug] [MainThread]: SQL status: BEGIN in 0.022 seconds
+[0m11:02:08.976858 [debug] [MainThread]: Using postgres connection "master"
+[0m11:02:08.988690 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:02:09.000815 [debug] [MainThread]: SQL status: SELECT 0 in 0.009 seconds
+[0m11:02:09.008161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5e065340>]}
+[0m11:02:09.012727 [debug] [MainThread]: On master: ROLLBACK
+[0m11:02:09.027124 [debug] [MainThread]: Using postgres connection "master"
+[0m11:02:09.030385 [debug] [MainThread]: On master: BEGIN
+[0m11:02:09.042918 [debug] [MainThread]: SQL status: BEGIN in 0.006 seconds
+[0m11:02:09.047693 [debug] [MainThread]: On master: COMMIT
+[0m11:02:09.050753 [debug] [MainThread]: Using postgres connection "master"
+[0m11:02:09.054108 [debug] [MainThread]: On master: COMMIT
+[0m11:02:09.057741 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m11:02:09.061289 [debug] [MainThread]: On master: Close
+[0m11:02:09.077050 [debug] [Thread-1 (]: Began running node model.amn_dbt.purchase_prices
+[0m11:02:09.080701 [info ] [Thread-1 (]: 1 of 4 START sql table model public.purchase_prices ............................ [RUN]
+[0m11:02:09.093895 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_amn_datawarehouse_public, now model.amn_dbt.purchase_prices)
+[0m11:02:09.100214 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.purchase_prices
+[0m11:02:09.138105 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.purchase_prices"
+[0m11:02:09.159057 [debug] [Thread-1 (]: Began executing node model.amn_dbt.purchase_prices
+[0m11:02:09.288600 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.purchase_prices"
+[0m11:02:09.303419 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m11:02:09.306426 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: BEGIN
+[0m11:02:09.309841 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:02:09.326148 [debug] [Thread-1 (]: SQL status: BEGIN in 0.016 seconds
+[0m11:02:09.329068 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m11:02:09.332006 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.purchase_prices"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."purchase_prices__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    Brand,
+    PurchasePrice
+FROM public.purchase_prices;
+  );
+  
+[0m11:02:09.335757 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 15: FROM public.purchase_prices;
+                                    ^
+
+[0m11:02:09.339054 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: ROLLBACK
+[0m11:02:09.342971 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: Close
+[0m11:02:09.362107 [debug] [Thread-1 (]: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m11:02:09.369777 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5ff63560>]}
+[0m11:02:09.373778 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model public.purchase_prices ................... [[31mERROR[0m in 0.27s]
+[0m11:02:09.379176 [debug] [Thread-1 (]: Finished running node model.amn_dbt.purchase_prices
+[0m11:02:09.385121 [debug] [Thread-1 (]: Began running node model.amn_dbt.sales
+[0m11:02:09.387350 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.purchase_prices' to be skipped because of status 'error'.  Reason: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql.
+[0m11:02:09.390361 [info ] [Thread-1 (]: 2 of 4 START sql table model public.sales ...................................... [RUN]
+[0m11:02:09.397075 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.amn_dbt.purchase_prices, now model.amn_dbt.sales)
+[0m11:02:09.401445 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.sales
+[0m11:02:09.412312 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.sales"
+[0m11:02:09.431472 [debug] [Thread-1 (]: Began executing node model.amn_dbt.sales
+[0m11:02:09.446799 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.sales"
+[0m11:02:09.462215 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m11:02:09.465535 [debug] [Thread-1 (]: On model.amn_dbt.sales: BEGIN
+[0m11:02:09.469188 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:02:09.488293 [debug] [Thread-1 (]: SQL status: BEGIN in 0.019 seconds
+[0m11:02:09.491274 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m11:02:09.493837 [debug] [Thread-1 (]: On model.amn_dbt.sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.sales"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    InventoryId,
+    Store,
+    Description AS SalesDescription, 
+    SalesPrice,
+    Brand
+FROM public.sales;
+  );
+  
+[0m11:02:09.497219 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 18: FROM public.sales;
+                          ^
+
+[0m11:02:09.501974 [debug] [Thread-1 (]: On model.amn_dbt.sales: ROLLBACK
+[0m11:02:09.505449 [debug] [Thread-1 (]: On model.amn_dbt.sales: Close
+[0m11:02:09.516261 [debug] [Thread-1 (]: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m11:02:09.519868 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '769c6a97-43a0-4643-90ac-cefa2fa8440e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5d0df9e0>]}
+[0m11:02:09.523426 [error] [Thread-1 (]: 2 of 4 ERROR creating sql table model public.sales ............................. [[31mERROR[0m in 0.12s]
+[0m11:02:09.527223 [debug] [Thread-1 (]: Finished running node model.amn_dbt.sales
+[0m11:02:09.530253 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.sales' to be skipped because of status 'error'.  Reason: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql.
+[0m11:02:09.535442 [debug] [Thread-1 (]: Began running node model.amn_dbt.profit_and_margin
+[0m11:02:09.537935 [info ] [Thread-1 (]: 3 of 4 SKIP relation public.profit_and_margin .................................. [[33mSKIP[0m]
+[0m11:02:09.541241 [debug] [Thread-1 (]: Finished running node model.amn_dbt.profit_and_margin
+[0m11:02:09.544579 [debug] [Thread-1 (]: Began running node model.amn_dbt.least_profitability
+[0m11:02:09.547606 [info ] [Thread-1 (]: 4 of 4 SKIP relation public.least_profitability ................................ [[33mSKIP[0m]
+[0m11:02:09.551949 [debug] [Thread-1 (]: Finished running node model.amn_dbt.least_profitability
+[0m11:02:09.557708 [debug] [MainThread]: Using postgres connection "master"
+[0m11:02:09.560296 [debug] [MainThread]: On master: BEGIN
+[0m11:02:09.563035 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:02:09.583170 [debug] [MainThread]: SQL status: BEGIN in 0.020 seconds
+[0m11:02:09.586996 [debug] [MainThread]: On master: COMMIT
+[0m11:02:09.589837 [debug] [MainThread]: Using postgres connection "master"
+[0m11:02:09.592362 [debug] [MainThread]: On master: COMMIT
+[0m11:02:09.595062 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m11:02:09.597075 [debug] [MainThread]: On master: Close
+[0m11:02:09.600906 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:02:09.603449 [debug] [MainThread]: Connection 'model.amn_dbt.sales' was properly closed.
+[0m11:02:09.605992 [info ] [MainThread]: 
+[0m11:02:09.609076 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.95 seconds (0.95s).
+[0m11:02:09.613980 [debug] [MainThread]: Command end result
+[0m11:02:09.720757 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:02:09.735395 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:02:09.773795 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/target/run_results.json
+[0m11:02:09.775963 [info ] [MainThread]: 
+[0m11:02:09.778849 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m11:02:09.783606 [info ] [MainThread]: 
+[0m11:02:09.787716 [error] [MainThread]:   Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m11:02:09.791434 [info ] [MainThread]: 
+[0m11:02:09.795014 [error] [MainThread]:   Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m11:02:09.798368 [info ] [MainThread]: 
+[0m11:02:09.803587 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m11:02:09.808950 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.8295257, "process_in_blocks": "0", "process_kernel_time": 0.630251, "process_mem_max_rss": "108316", "process_out_blocks": "0", "process_user_time": 7.25289}
+[0m11:02:09.812183 [debug] [MainThread]: Command `dbt run` failed at 11:02:09.811809 after 3.83 seconds
+[0m11:02:09.814737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5ff91670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a60500b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6a5d0748f0>]}
+[0m11:02:09.818610 [debug] [MainThread]: Flushing usage events
+[0m11:02:10.549775 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:06:23.091112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7431db6240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7431e4fb00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f74338484a0>]}
+
+
+============================== 11:06:23.103528 | af83a425-7828-459e-a359-9a8b74e41adc ==============================
+[0m11:06:23.103528 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:06:23.107401 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/usr/app/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:06:23.820882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f743187c5c0>]}
+[0m11:06:24.112249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f743185eea0>]}
+[0m11:06:24.131370 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:06:24.477069 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:06:24.876348 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:06:24.878744 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:06:24.965355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f74317603b0>]}
+[0m11:06:25.147741 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:06:25.163089 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:06:25.266436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742fcc4410>]}
+[0m11:06:25.269629 [info ] [MainThread]: Found 4 models, 429 macros
+[0m11:06:25.272874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7431d55460>]}
+[0m11:06:25.284080 [info ] [MainThread]: 
+[0m11:06:25.287120 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:06:25.298704 [info ] [MainThread]: 
+[0m11:06:25.302117 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:06:25.322166 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m11:06:25.438825 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m11:06:25.440697 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:06:25.442438 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:06:25.462459 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.020 seconds
+[0m11:06:25.474043 [debug] [ThreadPool]: On list_amn_datawarehouse: Close
+[0m11:06:25.483517 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_amn_datawarehouse, now list_amn_datawarehouse_public)
+[0m11:06:25.534596 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m11:06:25.536848 [debug] [ThreadPool]: On list_amn_datawarehouse_public: BEGIN
+[0m11:06:25.539316 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:06:25.567351 [debug] [ThreadPool]: SQL status: BEGIN in 0.028 seconds
+[0m11:06:25.569539 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse_public"
+[0m11:06:25.571849 [debug] [ThreadPool]: On list_amn_datawarehouse_public: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse_public"} */
+select
+      'amn_datawarehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'amn_datawarehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m11:06:25.580034 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.006 seconds
+[0m11:06:25.585083 [debug] [ThreadPool]: On list_amn_datawarehouse_public: ROLLBACK
+[0m11:06:25.587351 [debug] [ThreadPool]: On list_amn_datawarehouse_public: Close
+[0m11:06:25.604436 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:25.606564 [debug] [MainThread]: On master: BEGIN
+[0m11:06:25.609063 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:06:25.631708 [debug] [MainThread]: SQL status: BEGIN in 0.022 seconds
+[0m11:06:25.634059 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:25.637914 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:06:25.646649 [debug] [MainThread]: SQL status: SELECT 0 in 0.006 seconds
+[0m11:06:25.652998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742ff10cb0>]}
+[0m11:06:25.659007 [debug] [MainThread]: On master: ROLLBACK
+[0m11:06:25.663340 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:25.665676 [debug] [MainThread]: On master: BEGIN
+[0m11:06:25.668794 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m11:06:25.671124 [debug] [MainThread]: On master: COMMIT
+[0m11:06:25.673798 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:25.676619 [debug] [MainThread]: On master: COMMIT
+[0m11:06:25.680518 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m11:06:25.684024 [debug] [MainThread]: On master: Close
+[0m11:06:25.690089 [debug] [Thread-1 (]: Began running node model.amn_dbt.purchase_prices
+[0m11:06:25.693972 [info ] [Thread-1 (]: 1 of 4 START sql table model public.purchase_prices ............................ [RUN]
+[0m11:06:25.698565 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_amn_datawarehouse_public, now model.amn_dbt.purchase_prices)
+[0m11:06:25.702504 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.purchase_prices
+[0m11:06:25.725547 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.purchase_prices"
+[0m11:06:25.739745 [debug] [Thread-1 (]: Began executing node model.amn_dbt.purchase_prices
+[0m11:06:25.841067 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.purchase_prices"
+[0m11:06:25.848363 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m11:06:25.849782 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: BEGIN
+[0m11:06:25.851139 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:06:25.862397 [debug] [Thread-1 (]: SQL status: BEGIN in 0.011 seconds
+[0m11:06:25.864609 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.purchase_prices"
+[0m11:06:25.866371 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.purchase_prices"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."purchase_prices__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    Brand,
+    PurchasePrice
+FROM public.purchase_prices;
+  );
+  
+[0m11:06:25.868897 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 15: FROM public.purchase_prices;
+                                    ^
+
+[0m11:06:25.870749 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: ROLLBACK
+[0m11:06:25.872703 [debug] [Thread-1 (]: On model.amn_dbt.purchase_prices: Close
+[0m11:06:25.882810 [debug] [Thread-1 (]: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m11:06:25.888979 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742fd23c50>]}
+[0m11:06:25.892031 [error] [Thread-1 (]: 1 of 4 ERROR creating sql table model public.purchase_prices ................... [[31mERROR[0m in 0.19s]
+[0m11:06:25.896503 [debug] [Thread-1 (]: Finished running node model.amn_dbt.purchase_prices
+[0m11:06:25.899336 [debug] [Thread-1 (]: Began running node model.amn_dbt.sales
+[0m11:06:25.900874 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.purchase_prices' to be skipped because of status 'error'.  Reason: Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql.
+[0m11:06:25.903179 [info ] [Thread-1 (]: 2 of 4 START sql table model public.sales ...................................... [RUN]
+[0m11:06:25.908078 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.amn_dbt.purchase_prices, now model.amn_dbt.sales)
+[0m11:06:25.909613 [debug] [Thread-1 (]: Began compiling node model.amn_dbt.sales
+[0m11:06:25.916413 [debug] [Thread-1 (]: Writing injected SQL for node "model.amn_dbt.sales"
+[0m11:06:25.925432 [debug] [Thread-1 (]: Began executing node model.amn_dbt.sales
+[0m11:06:25.934620 [debug] [Thread-1 (]: Writing runtime sql for node "model.amn_dbt.sales"
+[0m11:06:25.943024 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m11:06:25.946578 [debug] [Thread-1 (]: On model.amn_dbt.sales: BEGIN
+[0m11:06:25.948802 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:06:25.965042 [debug] [Thread-1 (]: SQL status: BEGIN in 0.016 seconds
+[0m11:06:25.967085 [debug] [Thread-1 (]: Using postgres connection "model.amn_dbt.sales"
+[0m11:06:25.968780 [debug] [Thread-1 (]: On model.amn_dbt.sales: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "node_id": "model.amn_dbt.sales"} */
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."sales__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
+    InventoryId,
+    Store,
+    Description AS SalesDescription, 
+    SalesPrice,
+    Brand
+FROM public.sales;
+  );
+  
+[0m11:06:25.971405 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 18: FROM public.sales;
+                          ^
+
+[0m11:06:25.973096 [debug] [Thread-1 (]: On model.amn_dbt.sales: ROLLBACK
+[0m11:06:25.975016 [debug] [Thread-1 (]: On model.amn_dbt.sales: Close
+[0m11:06:25.983690 [debug] [Thread-1 (]: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m11:06:25.985629 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af83a425-7828-459e-a359-9a8b74e41adc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f742d58b740>]}
+[0m11:06:25.987827 [error] [Thread-1 (]: 2 of 4 ERROR creating sql table model public.sales ............................. [[31mERROR[0m in 0.08s]
+[0m11:06:25.990230 [debug] [Thread-1 (]: Finished running node model.amn_dbt.sales
+[0m11:06:25.992541 [debug] [Thread-4 (]: Marking all children of 'model.amn_dbt.sales' to be skipped because of status 'error'.  Reason: Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql.
+[0m11:06:25.996804 [debug] [Thread-1 (]: Began running node model.amn_dbt.profit_and_margin
+[0m11:06:25.998950 [info ] [Thread-1 (]: 3 of 4 SKIP relation public.profit_and_margin .................................. [[33mSKIP[0m]
+[0m11:06:26.000924 [debug] [Thread-1 (]: Finished running node model.amn_dbt.profit_and_margin
+[0m11:06:26.003852 [debug] [Thread-1 (]: Began running node model.amn_dbt.least_profitability
+[0m11:06:26.005545 [info ] [Thread-1 (]: 4 of 4 SKIP relation public.least_profitability ................................ [[33mSKIP[0m]
+[0m11:06:26.007416 [debug] [Thread-1 (]: Finished running node model.amn_dbt.least_profitability
+[0m11:06:26.011217 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:26.013980 [debug] [MainThread]: On master: BEGIN
+[0m11:06:26.015645 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:06:26.026457 [debug] [MainThread]: SQL status: BEGIN in 0.011 seconds
+[0m11:06:26.029310 [debug] [MainThread]: On master: COMMIT
+[0m11:06:26.031645 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:26.033356 [debug] [MainThread]: On master: COMMIT
+[0m11:06:26.035236 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m11:06:26.037806 [debug] [MainThread]: On master: Close
+[0m11:06:26.039538 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:06:26.041356 [debug] [MainThread]: Connection 'model.amn_dbt.sales' was properly closed.
+[0m11:06:26.043138 [info ] [MainThread]: 
+[0m11:06:26.046527 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 0.74 seconds (0.74s).
+[0m11:06:26.050287 [debug] [MainThread]: Command end result
+[0m11:06:26.221179 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:06:26.237097 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:06:26.269706 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/target/run_results.json
+[0m11:06:26.272305 [info ] [MainThread]: 
+[0m11:06:26.274947 [info ] [MainThread]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m11:06:26.278314 [info ] [MainThread]: 
+[0m11:06:26.282768 [error] [MainThread]:   Database Error in model purchase_prices (models/purchase_prices.sql)
+  syntax error at or near ";"
+  LINE 15: FROM public.purchase_prices;
+                                      ^
+  compiled code at target/run/amn_dbt/models/purchase_prices.sql
+[0m11:06:26.287308 [info ] [MainThread]: 
+[0m11:06:26.290034 [error] [MainThread]:   Database Error in model sales (models/sales.sql)
+  syntax error at or near ";"
+  LINE 18: FROM public.sales;
+                            ^
+  compiled code at target/run/amn_dbt/models/sales.sql
+[0m11:06:26.293825 [info ] [MainThread]: 
+[0m11:06:26.298878 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m11:06:26.303623 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.5771904, "process_in_blocks": "0", "process_kernel_time": 0.45274, "process_mem_max_rss": "107004", "process_out_blocks": "0", "process_user_time": 6.338364}
+[0m11:06:26.306450 [debug] [MainThread]: Command `dbt run` failed at 11:06:26.306205 after 3.58 seconds
+[0m11:06:26.308199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7431cba9f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f743230cc80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f743230c3b0>]}
+[0m11:06:26.309783 [debug] [MainThread]: Flushing usage events
+[0m11:06:27.057258 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:58.686074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c16c17c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c18f1550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c18f1c10>]}
+
+
+============================== 11:08:58.697238 | a4beaa1c-681a-4236-9c8e-e2084ebac678 ==============================
+[0m11:08:58.697238 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:08:58.712248 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/usr/app/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m11:08:59.688375 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a4beaa1c-681a-4236-9c8e-e2084ebac678', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c1b2fc80>]}
+[0m11:08:59.939084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a4beaa1c-681a-4236-9c8e-e2084ebac678', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c14df5c0>]}
+[0m11:08:59.943202 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:09:00.330487 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:09:00.698556 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m11:09:00.701923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a4beaa1c-681a-4236-9c8e-e2084ebac678', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c1b2fd10>]}
+[0m11:09:03.439800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a4beaa1c-681a-4236-9c8e-e2084ebac678', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8bf8f00e0>]}
+[0m11:09:03.572205 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:09:03.582851 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:09:03.616465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a4beaa1c-681a-4236-9c8e-e2084ebac678', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8bf89af00>]}
+[0m11:09:03.618336 [info ] [MainThread]: Found 4 models, 429 macros
+[0m11:09:03.620363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a4beaa1c-681a-4236-9c8e-e2084ebac678', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8bf8f03e0>]}
+[0m11:09:03.626627 [info ] [MainThread]: 
+[0m11:09:03.628998 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:09:03.631720 [info ] [MainThread]: 
+[0m11:09:03.634602 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:09:03.647603 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m11:09:03.764487 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m11:09:03.767207 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:09:03.769793 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:09:03.774269 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:09:03.784006 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:09:03.790623 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:09:03.793300 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:09:03.795611 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:09:03.797353 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m11:09:03.800934 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:09:03.804017 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m11:09:03.806386 [info ] [MainThread]: 
+[0m11:09:03.813553 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.17 seconds (0.17s).
+[0m11:09:03.817583 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m11:09:03.823523 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.5207214, "process_in_blocks": "0", "process_kernel_time": 0.514119, "process_mem_max_rss": "105952", "process_out_blocks": "0", "process_user_time": 8.295124}
+[0m11:09:03.826492 [debug] [MainThread]: Command `dbt run` failed at 11:09:03.826124 after 5.52 seconds
+[0m11:09:03.829090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8c15dcd70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8bf9b57c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8bf8f47d0>]}
+[0m11:09:03.837586 [debug] [MainThread]: Flushing usage events
+[0m11:09:04.637882 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:09:43.043886 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ede0fc620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3edb3c0a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3edb959820>]}
+
+
+============================== 11:09:43.048798 | 4369896f-0038-4ce0-a3bb-19655ec93595 ==============================
+[0m11:09:43.048798 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:09:43.050888 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/usr/app/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/usr/app/dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m11:09:43.307612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4369896f-0038-4ce0-a3bb-19655ec93595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3edb1dbdd0>]}
+[0m11:09:43.399401 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4369896f-0038-4ce0-a3bb-19655ec93595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3edb3c0b60>]}
+[0m11:09:43.401662 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:09:43.531823 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:09:43.699511 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:09:43.701155 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:09:43.743572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4369896f-0038-4ce0-a3bb-19655ec93595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ed97dfaa0>]}
+[0m11:09:43.870791 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:09:43.881430 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:09:43.914220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4369896f-0038-4ce0-a3bb-19655ec93595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ed973c470>]}
+[0m11:09:43.916174 [info ] [MainThread]: Found 4 models, 429 macros
+[0m11:09:43.918460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4369896f-0038-4ce0-a3bb-19655ec93595', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ed998b9e0>]}
+[0m11:09:43.924492 [info ] [MainThread]: 
+[0m11:09:43.926934 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:09:43.929189 [info ] [MainThread]: 
+[0m11:09:43.932067 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:09:43.943552 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m11:09:44.014645 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m11:09:44.016414 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:09:44.018156 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:09:44.020937 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:09:44.025709 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:09:44.029013 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:09:44.030688 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:09:44.032186 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:09:44.033708 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m11:09:44.035846 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:09:44.037523 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m11:09:44.039839 [info ] [MainThread]: 
+[0m11:09:44.043256 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.11 seconds (0.11s).
+[0m11:09:44.045724 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m11:09:44.049100 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.1373494, "process_in_blocks": "0", "process_kernel_time": 0.237577, "process_mem_max_rss": "103044", "process_out_blocks": "0", "process_user_time": 2.534154}
+[0m11:09:44.051670 [debug] [MainThread]: Command `dbt run` failed at 11:09:44.051451 after 1.14 seconds
+[0m11:09:44.053439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3edbe19f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ed97a86e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3ed984bfb0>]}
+[0m11:09:44.056400 [debug] [MainThread]: Flushing usage events
+[0m11:09:44.767178 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:09:59.480935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4236b45910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4236d3ef00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4236a0fda0>]}
+
+
+============================== 11:09:59.486093 | 73f40157-a96f-4297-a4e0-be4e32ca44cf ==============================
+[0m11:09:59.486093 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:09:59.488050 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/usr/app/dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/usr/app/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:09:59.742583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '73f40157-a96f-4297-a4e0-be4e32ca44cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42364cae40>]}
+[0m11:09:59.833997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '73f40157-a96f-4297-a4e0-be4e32ca44cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42365978c0>]}
+[0m11:09:59.836307 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:09:59.959920 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:10:00.130607 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:10:00.132390 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:10:00.172807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '73f40157-a96f-4297-a4e0-be4e32ca44cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f423647fda0>]}
+[0m11:10:00.285164 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m11:10:00.293875 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m11:10:00.322563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '73f40157-a96f-4297-a4e0-be4e32ca44cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4234954260>]}
+[0m11:10:00.324272 [info ] [MainThread]: Found 4 models, 429 macros
+[0m11:10:00.326256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '73f40157-a96f-4297-a4e0-be4e32ca44cf', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4239c6a8d0>]}
+[0m11:10:00.330425 [info ] [MainThread]: 
+[0m11:10:00.332313 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:10:00.334075 [info ] [MainThread]: 
+[0m11:10:00.336246 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:10:00.345803 [debug] [ThreadPool]: Acquiring new postgres connection 'list_amn_datawarehouse'
+[0m11:10:00.404482 [debug] [ThreadPool]: Using postgres connection "list_amn_datawarehouse"
+[0m11:10:00.407039 [debug] [ThreadPool]: On list_amn_datawarehouse: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:10:00.408595 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:10:00.411868 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m11:10:00.414691 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "my_profile", "target_name": "dev", "connection_name": "list_amn_datawarehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:10:00.416316 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:10:00.417976 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m11:10:00.419273 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m11:10:00.420773 [debug] [ThreadPool]: On list_amn_datawarehouse: No close available on handle
+[0m11:10:00.422647 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:10:00.424021 [debug] [MainThread]: Connection 'list_amn_datawarehouse' was properly closed.
+[0m11:10:00.425292 [info ] [MainThread]: 
+[0m11:10:00.427944 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.09 seconds (0.09s).
+[0m11:10:00.430183 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m11:10:00.433130 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.1043686, "process_in_blocks": "0", "process_kernel_time": 0.201304, "process_mem_max_rss": "102952", "process_out_blocks": "0", "process_user_time": 2.465983}
+[0m11:10:00.434980 [debug] [MainThread]: Command `dbt run` failed at 11:10:00.434753 after 1.11 seconds
+[0m11:10:00.436335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4236e46cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4234c8f200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42349d5250>]}
+[0m11:10:00.437721 [debug] [MainThread]: Flushing usage events
+[0m11:10:01.135647 [debug] [MainThread]: An error was encountered while trying to flush usage events

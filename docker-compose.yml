@@ -26,6 +26,9 @@ services:
       POSTGRES_PASSWORD: mypassword
     volumes:
       - postgres_data_app:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
     networks:
       - airflow-network
 
@@ -60,6 +63,7 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
       - ./data/source:/sales-processing/data/source
+      - ./spark/jars:/opt/spark/jars
     command: >
       bash -c "
       airflow db migrate &&

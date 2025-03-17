@@ -77,8 +77,9 @@ def upload_to_minio_in_memory(file_name, file_content, bucket_name):
         print(f"Error al subir archivo a MinIO: {e}")
 
 def ingest_data(**kwargs):
-    date_today = datetime.now().strftime('%Y%m%d')
-    bucket_name = f'rawdata-{date_today}'
+    #date_today = datetime.now().strftime('%Y%m%d')
+    #bucket_name = f'rawdata-{date_today}'
+    bucket_name = 'rawdata'
 
     create_bucket_if_not_exists(bucket_name)
 

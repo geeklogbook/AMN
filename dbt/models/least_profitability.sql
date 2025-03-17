@@ -1,20 +1,24 @@
-WITH sales_data AS (
+WITH profit_data AS (
     SELECT 
-        s.Brand,
-        s.SalesDescription, 
-        s.SalesPrice,
-        p.PurchasePrice
-    FROM 
-        {{ ref('Sales') }} s
-    LEFT JOIN 
-        {{ ref('PurchasePrices') }} p
-        ON s.Brand = p.Brand
+        InventoryId,
+        Store,
+        SalesDescription,
+        SalesPrice,
+        PurchasePrice,
+        Profit,
+        ProfitMargin
+    FROM {{ ref('profit_and_margin') }}
 )
 SELECT 
-    Brand,
-    SalesDescription, 
-    (SalesPrice - PurchasePrice) AS Profit  
+    InventoryId,
+    Store,
+    SalesDescription,
+    SalesPrice,
+    PurchasePrice,
+    Profit,
+    ProfitMargin
 FROM 
-    sales_data
-WHERE 
-    (SalesPrice - PurchasePrice) < 0
+    profit_data
+ORDER BY 
+    Profit ASC
+LIMIT 10;

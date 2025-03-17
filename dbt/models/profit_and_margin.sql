@@ -4,11 +4,12 @@ WITH sales_data AS (
         s.Store,
         s.SalesDescription, 
         s.SalesPrice,
-        p.PurchasePrice
+        COALESCE(p.PurchasePrice, 0) AS PurchasePrice,
+        (s.SalesPrice - COALESCE(p.PurchasePrice, 0)) AS Profit
     FROM 
-        {{ ref('Sales') }} s
+        {{ ref('sales') }} AS s 
     LEFT JOIN 
-        {{ ref('PurchasePrices') }} p
+        {{ ref('purchase_prices') }} AS p
         ON s.Brand = p.Brand
 )
 SELECT 
@@ -17,7 +18,7 @@ SELECT
     SalesDescription, 
     SalesPrice,
     PurchasePrice,
-    (SalesPrice - PurchasePrice) AS Profit,
-    ((SalesPrice - PurchasePrice) / SalesPrice) * 100 AS ProfitMargin
+    Profit,
+    (Profit / NULLIF(SalesPrice, 0)) * 100 AS ProfitMargin
 FROM 
-    sales_data
+    sales_data;
