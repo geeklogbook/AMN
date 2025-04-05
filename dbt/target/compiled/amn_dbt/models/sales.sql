@@ -1,7 +1,7 @@
 SELECT 
-    InventoryId,
-    Store,
-    Description AS SalesDescription, 
-    SalesPrice,
-    Brand
-FROM public.sales;
+    inventoryid,
+    store,
+    salesdescription AS SalesDescription, 
+    salesprice,
+    brand
+FROM public.sales

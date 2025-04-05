@@ -36,7 +36,6 @@ def download_and_load_to_spark(**kwargs):
     objects = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
     files = {obj['Key'] for obj in objects.get('Contents', [])}
 
-    # Diccionario para asignar nombres personalizados
     target_files = {
         "2017PurchasePricesDec.zip": "purchasePrices",
         "SalesFINAL12312016.zip": "sales"
@@ -57,11 +56,9 @@ def download_and_load_to_spark(**kwargs):
                         kwargs['ti'].xcom_push(key=dataset_name, value=df)
 
 def load_to_postgres(**kwargs):
-    # Obtener DataFrames desde XCom
     purchase_prices_df = kwargs['ti'].xcom_pull(key='purchasePrices', task_ids='download_and_load_to_spark')
     sales_df = kwargs['ti'].xcom_pull(key='sales', task_ids='download_and_load_to_spark')
 
-    # Conectar a PostgreSQL
     conn = psycopg2.connect(
         host=POSTGRES_HOST,
         port=POSTGRES_PORT,
@@ -71,7 +68,6 @@ def load_to_postgres(**kwargs):
     )
     cursor = conn.cursor()
 
-    # Crear tablas con estructura correcta
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS sales (
             InventoryId TEXT,

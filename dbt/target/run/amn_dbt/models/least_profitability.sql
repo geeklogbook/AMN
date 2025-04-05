@@ -1,4 +1,14 @@
-WITH profit_data AS (
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."least_profitability__dbt_tmp"
+  
+  
+    as
+  
+  (
+    WITH profit_data AS (
     SELECT 
         InventoryId,
         Store,
@@ -7,7 +17,7 @@ WITH profit_data AS (
         PurchasePrice,
         Profit,
         ProfitMargin
-    FROM {{ ref('profit_and_margin') }}
+    FROM "amn_datawarehouse"."public"."profit_and_margin"
 )
 SELECT 
     InventoryId,
@@ -22,3 +32,5 @@ FROM
 ORDER BY 
     Profit ASC
 LIMIT 10
+  );
+  

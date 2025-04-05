@@ -7,7 +7,7 @@ WITH profit_data AS (
         PurchasePrice,
         Profit,
         ProfitMargin
-    FROM {{ ref('profit_and_margin') }}
+    FROM "amn_datawarehouse"."public"."profit_and_margin"
 )
 SELECT 
     InventoryId,

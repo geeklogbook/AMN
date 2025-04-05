@@ -28,7 +28,7 @@ with TaskGroup("dbt_tasks", dag=dag) as dbt_tasks:
         command='dbt run',
         docker_url='unix://var/run/docker.sock',
         network_mode='airflow-network',
-        volumes=['/path/to/dbt:/usr/app/dbt'], 
+        volumes=['/absolute/path/to/dbt:/usr/app/dbt:rw'],  # Replace with a valid absolute path
         environment={
             'DBT_PROFILES_DIR': '/usr/app/dbt',
         },

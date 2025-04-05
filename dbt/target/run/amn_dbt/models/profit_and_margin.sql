@@ -1,4 +1,14 @@
-SELECT 
+
+  
+    
+
+  create  table "amn_datawarehouse"."public"."profit_and_margin__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT 
     s.InventoryId,
     s.Store,
     s.SalesDescription, 
@@ -7,7 +17,9 @@ SELECT
     (s.SalesPrice - COALESCE(p.PurchasePrice, 0)) AS Profit,
     (s.SalesPrice - COALESCE(p.PurchasePrice, 0)) / NULLIF(s.SalesPrice, 0) * 100 AS ProfitMargin
 FROM 
-    {{ ref('sales') }} AS s 
+    "amn_datawarehouse"."public"."sales" AS s 
 LEFT JOIN 
-    {{ ref('purchase_prices') }} AS p
+    "amn_datawarehouse"."public"."purchase_prices" AS p
     ON s.Brand = p.Brand
+  );
+  
