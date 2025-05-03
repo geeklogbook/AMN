@@ -1,169 +1,97 @@
 import os
 import boto3
-from pyspark.sql import SparkSession
 from airflow import DAG
 from datetime import datetime
 from io import BytesIO
-import psycopg2
 from airflow.operators.python import PythonOperator
 import zipfile
+import pandas as pd
 
 MINIO_ENDPOINT = 'http://data-lake:9000'
 MINIO_ACCESS_KEY = 'minio'
 MINIO_SECRET_KEY = 'minio123'
-POSTGRES_HOST = 'postgresql-data' 
-POSTGRES_PORT = '5432'
-POSTGRES_DB = 'amn_datawarehouse'
-POSTGRES_USER = 'myuser'
-POSTGRES_PASSWORD = 'mypassword'
-#BUCKET_NAME = 'rawdata_{}'.format(datetime.now().strftime('%Y%m%d'))  
-BUCKET_NAME = 'rawdata'
+BUCKET_NAME = 'staging'
 
+def create_bucket_if_not_exists(bucket_name):
+    s3_client = boto3.client('s3',
+                             endpoint_url=MINIO_ENDPOINT,
+                             aws_access_key_id=MINIO_ACCESS_KEY,
+                             aws_secret_access_key=MINIO_SECRET_KEY,
+                             region_name='us-east-1')
+    try:
+        s3_client.head_bucket(Bucket=bucket_name)
+        print(f"Bucket {bucket_name} ya existe.")
+    except:
+        s3_client.create_bucket(Bucket=bucket_name)
+        print(f"Bucket {bucket_name} creado.")
 
-spark = SparkSession.builder \
-    .appName("Data Transformation with Spark") \
-    .master("spark://spark-master:7077") \
-    .getOrCreate()
+def transform_and_save_to_minio(**kwargs):
+    # Crear el bucket staging si no existe
+    create_bucket_if_not_exists(BUCKET_NAME)
+    print(f"Bucket {BUCKET_NAME} creado o ya existe.")
 
-
-def download_and_load_to_spark(**kwargs):
     s3_client = boto3.client('s3',
                              endpoint_url=MINIO_ENDPOINT,
                              aws_access_key_id=MINIO_ACCESS_KEY,
                              aws_secret_access_key=MINIO_SECRET_KEY,
                              region_name='us-east-1')
 
-    objects = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
+    # Lee los archivos ZIP desde el bucket rawdata
+    raw_bucket = 'rawdata'
+    objects = s3_client.list_objects_v2(Bucket=raw_bucket)
     files = {obj['Key'] for obj in objects.get('Contents', [])}
+    print(f"Archivos encontrados en {raw_bucket}: {files}")
 
     target_files = {
-        "2017PurchasePricesDec.zip": "purchasePrices",
-        "SalesFINAL12312016.zip": "sales"
+        "VendorInvoices12312016csv.zip":"VendorInvoices",
+        "2017PurchasePricesDeccsv.zip": "purchasePrices",
+        "BegInvFINAL12312016csv.zip":"BegInv",
+        "EndInvFINAL12312016csv.zip":"EndInv",
+        "PurchasesFINAL12312016csv.zip":"Purchases",
+        #"SalesFINAL12312016csv.zip": "sales"
     }
 
     for file, dataset_name in target_files.items():
         if file in files:
-            file_obj = s3_client.get_object(Bucket=BUCKET_NAME, Key=file)
+            print(f"Procesando archivo: {file}")
+            file_obj = s3_client.get_object(Bucket=raw_bucket, Key=file)
             zip_content = BytesIO(file_obj['Body'].read())
 
             with zipfile.ZipFile(zip_content, 'r') as zip_ref:
-                zip_files = zip_ref.namelist()
-
-                for zip_file in zip_files:
+                for zip_file in zip_ref.namelist():
+                    print(f"Extrayendo archivo del ZIP: {zip_file}")
                     with zip_ref.open(zip_file) as extracted_file:
-                        df = spark.read.csv(extracted_file, header=True, inferSchema=True)
+                        df = pd.read_csv(extracted_file)
+                        print(f"DataFrame creado para {dataset_name} con {len(df)} filas.")
+                        csv_buffer = BytesIO()
+                        df.to_csv(csv_buffer, index=False)
+                        csv_buffer.seek(0)
+                        output_key = f"transformed_{dataset_name}.csv"
+                        s3_client.put_object(
+                            Bucket=BUCKET_NAME,
+                            Key=output_key,
+                            Body=csv_buffer.getvalue()
+                        )
+                        print(f"Archivo CSV guardado en: {BUCKET_NAME}/{output_key}")
 
-                        kwargs['ti'].xcom_push(key=dataset_name, value=df)
-
-def load_to_postgres(**kwargs):
-    purchase_prices_df = kwargs['ti'].xcom_pull(key='purchasePrices', task_ids='download_and_load_to_spark')
-    sales_df = kwargs['ti'].xcom_pull(key='sales', task_ids='download_and_load_to_spark')
-
-    conn = psycopg2.connect(
-        host=POSTGRES_HOST,
-        port=POSTGRES_PORT,
-        dbname=POSTGRES_DB,
-        user=POSTGRES_USER,
-        password=POSTGRES_PASSWORD
-    )
-    cursor = conn.cursor()
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS sales (
-            InventoryId TEXT,
-            Store INT,
-            Brand INT,
-            Description TEXT,
-            Size TEXT,
-            SalesQuantity INT,
-            SalesDollars FLOAT,
-            SalesPrice FLOAT,
-            SalesDate DATE,
-            Volume FLOAT,
-            Classification INT,
-            ExciseTax FLOAT,
-            VendorNo INT,
-            VendorName TEXT
-        );
-    """)
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS purchase_prices (
-            InventoryId TEXT,
-            Store INT,
-            Brand INT,
-            Description TEXT,
-            Size TEXT,
-            VendorNumber INT,
-            VendorName TEXT,
-            PONumber INT,
-            PODate DATE,
-            ReceivingDate DATE,
-            InvoiceDate DATE,
-            PayDate DATE,
-            PurchasePrice FLOAT,
-            Quantity INT,
-            Dollars FLOAT,
-            Classification INT
-        );
-    """)
-
-    # Insertar datos en la tabla sales
-    if sales_df:
-        for row in sales_df.collect():
-            cursor.execute("""
-                INSERT INTO sales (
-                    InventoryId, Store, Brand, Description, Size, SalesQuantity,
-                    SalesDollars, SalesPrice, SalesDate, Volume, Classification,
-                    ExciseTax, VendorNo, VendorName
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (
-                row["InventoryId"], row["Store"], row["Brand"], row["Description"], row["Size"],
-                row["SalesQuantity"], row["SalesDollars"], row["SalesPrice"], row["SalesDate"],
-                row["Volume"], row["Classification"], row["ExciseTax"], row["VendorNo"], row["VendorName"]
-            ))
-
-    # Insertar datos en la tabla purchase_prices
-    if purchase_prices_df:
-        for row in purchase_prices_df.collect():
-            cursor.execute("""
-                INSERT INTO purchase_prices (
-                    InventoryId, Store, Brand, Description, Size, VendorNumber,
-                    VendorName, PONumber, PODate, ReceivingDate, InvoiceDate,
-                    PayDate, PurchasePrice, Quantity, Dollars, Classification
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (
-                row["InventoryId"], row["Store"], row["Brand"], row["Description"], row["Size"],
-                row["VendorNumber"], row["VendorName"], row["PONumber"], row["PODate"], row["ReceivingDate"],
-                row["InvoiceDate"], row["PayDate"], row["PurchasePrice"], row["Quantity"], row["Dollars"],
-                row["Classification"]
-            ))
-
-    conn.commit()
-    cursor.close()
-    conn.close()
-
+                        # Pasa la ruta por XCom para la siguiente tarea
+                        kwargs['ti'].xcom_push(key=f"{dataset_name}_csv_path", value=f"{BUCKET_NAME}/{output_key}")
+        else:
+            print(f"Archivo {file} no encontrado en el bucket {raw_bucket}.")
 
 dag = DAG(
     'data_transformation_dag',
-    description='DAG para transformar datos con Spark y cargarlos en PostgreSQL',
-    schedule_interval='@daily',  
+    description='DAG para transformar datos y cargarlos en MinIO',
+    schedule_interval=None,
     start_date=datetime(2023, 1, 1),
     catchup=False,
 )
 
-download_and_load_task = PythonOperator(
-    task_id='download_and_load_to_spark',
-    python_callable=download_and_load_to_spark,
-    provide_context=True,  
+transform_and_save_task = PythonOperator(
+    task_id='transform_and_save_to_minio',
+    python_callable=transform_and_save_to_minio,
+    provide_context=True,
     dag=dag,
 )
 
-load_to_postgres_task = PythonOperator(
-    task_id='load_to_postgres',
-    python_callable=load_to_postgres,
-    provide_context=True,  
-    dag=dag,
-)
-
-download_and_load_task >> load_to_postgres_task
+transform_and_save_task
