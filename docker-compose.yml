@@ -325,23 +325,41 @@ services:
       - airflow-network
 
   data-lake:
-    image: bitnami/minio:latest
+    image: minio/minio
     container_name: data-lake
+    command: server /data --console-address ":9001"
     ports:
       - "9000:9000"
       - "9001:9001"
     volumes:
-      - data-lake:/bitnami/minio/data
+      - data-lake:/data
     environment:
       - MINIO_ROOT_USER=minio
       - MINIO_ROOT_PASSWORD=minio123
+    restart: always
     networks:
       - airflow-network
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: my_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
+    ports:
+      - "8080:80" # Map host port 8080 to container port 80
+    depends_on:
+      - postgres
+    networks:
+      - airflow-network
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
   postgres_data_app:
   data-lake:
   postgres-db-volume:
+  pgadmin_data:
 
 networks:
   airflow-network:
