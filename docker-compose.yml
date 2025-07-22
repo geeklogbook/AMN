@@ -305,11 +305,12 @@ services:
   spark-master:
     image: bitnami/spark:latest
     container_name: spark-master
+    hostname: spark-master
     environment:
       SPARK_MODE: master
     ports:
       - "7077:7077"
-      - "8081:8080"
+      - "8082:8080"
     networks:
       - airflow-network
 
@@ -347,7 +348,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@example.com
       PGADMIN_DEFAULT_PASSWORD: adminpassword
     ports:
-      - "8080:80" # Map host port 8080 to container port 80
+      - "8081:80" # Map host port 8081 to container port 80
     depends_on:
       - postgres
     networks:
