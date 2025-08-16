@@ -40,9 +40,8 @@ def check_minio_connection():
         print(f"Ocurrió un error: {e}")
         return False
 
-def ingest_data_to_minio():
+def ingest_data_to_datalake():
     try:
-        # Configurar cliente S3
         s3_client = boto3.client(
             's3',
             endpoint_url='http://data-lake:9000',
@@ -78,24 +77,23 @@ def ingest_data_to_minio():
         raise
 
 dag = DAG(
-    'data_ingestion_minio_dag',
-    description='DAG para descargar archivos y subir a MinIO',
+    'data_ingestion_dag',
+    description='DAG para descargar archivos y subir a Datalake',
     schedule_interval=None,
     start_date=datetime(2025, 1, 1),
     catchup=False,
 )
 
 check_connection_task = PythonOperator(
-    task_id='check_minio_connection',
+    task_id='check_connection',
     python_callable=check_minio_connection,
     dag=dag,
 )
 
 ingest_task = PythonOperator(
-    task_id='ingest_data_task',
-    python_callable=ingest_data_to_minio,
+    task_id='ingest_data',
+    python_callable=ingest_data_to_datalake,
     dag=dag,
 )
 
-# Definir el orden de las tareas
 check_connection_task >> ingest_task

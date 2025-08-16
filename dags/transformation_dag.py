@@ -25,7 +25,7 @@ def create_bucket_if_not_exists(bucket_name):
         s3_client.create_bucket(Bucket=bucket_name)
         print(f"Bucket {bucket_name} creado.")
 
-def transform_and_save_to_minio(**kwargs):
+def transform_and_save_to_datalake(**kwargs):
     # Crear el bucket staging si no existe
     create_bucket_if_not_exists(BUCKET_NAME)
     print(f"Bucket {BUCKET_NAME} creado o ya existe.")
@@ -88,8 +88,8 @@ dag = DAG(
 )
 
 transform_and_save_task = PythonOperator(
-    task_id='transform_and_save_to_minio',
-    python_callable=transform_and_save_to_minio,
+    task_id='transform_and_save_to_datalake',
+    python_callable=transform_and_save_to_datalake,
     provide_context=True,
     dag=dag,
 )

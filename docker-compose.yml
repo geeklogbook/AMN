@@ -77,7 +77,6 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
-    - ${AIRFLOW_PROJ_DIR:-.}/dbt:/opt/airflow/dbt
   user: "${AIRFLOW_UID:-50000}:0"
   networks:
     - airflow-network
@@ -302,28 +301,20 @@ services:
     networks:
       - airflow-network
 
-  spark-master:
-    image: bitnami/spark:latest
-    container_name: spark-master
-    hostname: spark-master
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: my_pgadmin
     environment:
-      SPARK_MODE: master
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: adminpassword
     ports:
-      - "7077:7077"
-      - "8082:8080"
-    networks:
-      - airflow-network
-
-  spark-worker:
-    image: bitnami/spark:latest
-    container_name: spark-worker
-    environment:
-      SPARK_MODE: worker
-      SPARK_MASTER_URL: spark://spark-master:7077
+      - "8081:80"
     depends_on:
-      - spark-master
+      - postgres
     networks:
       - airflow-network
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
 
   data-lake:
     image: minio/minio
@@ -340,21 +331,6 @@ services:
     restart: always
     networks:
       - airflow-network
-
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: my_pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: adminpassword
-    ports:
-      - "8081:80" # Map host port 8081 to container port 80
-    depends_on:
-      - postgres
-    networks:
-      - airflow-network
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
 
 volumes:
   postgres_data_app:
