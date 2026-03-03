@@ -3,7 +3,7 @@ import boto3
 from airflow import DAG
 from datetime import datetime
 from io import BytesIO
-from airflow.operators.python import PythonOperator
+from airflow.operators.python import PythonOperator, get_current_context
 import zipfile
 import pandas as pd
 
@@ -25,7 +25,7 @@ def create_bucket_if_not_exists(bucket_name):
         s3_client.create_bucket(Bucket=bucket_name)
         print(f"Bucket {bucket_name} creado.")
 
-def transform_and_save_to_datalake(**kwargs):
+def transform_and_save_to_datalake():
     # Crear el bucket staging si no existe
     create_bucket_if_not_exists(BUCKET_NAME)
     print(f"Bucket {BUCKET_NAME} creado o ya existe.")
@@ -75,14 +75,14 @@ def transform_and_save_to_datalake(**kwargs):
                         print(f"Archivo CSV guardado en: {BUCKET_NAME}/{output_key}")
 
                         # Pasa la ruta por XCom para la siguiente tarea
-                        kwargs['ti'].xcom_push(key=f"{dataset_name}_csv_path", value=f"{BUCKET_NAME}/{output_key}")
+                        get_current_context()['ti'].xcom_push(key=f"{dataset_name}_csv_path", value=f"{BUCKET_NAME}/{output_key}")
         else:
             print(f"Archivo {file} no encontrado en el bucket {raw_bucket}.")
 
 dag = DAG(
     'data_transformation_dag',
     description='DAG para transformar datos y cargarlos en MinIO',
-    schedule_interval=None,
+    schedule=None,
     start_date=datetime(2023, 1, 1),
     catchup=False,
 )
@@ -90,7 +90,6 @@ dag = DAG(
 transform_and_save_task = PythonOperator(
     task_id='transform_and_save_to_datalake',
     python_callable=transform_and_save_to_datalake,
-    provide_context=True,
     dag=dag,
 )
 

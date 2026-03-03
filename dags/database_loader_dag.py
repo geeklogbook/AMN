@@ -17,7 +17,7 @@ POSTGRES_USER = 'myuser'
 POSTGRES_PASSWORD = 'mypassword'
 BUCKET_NAME = 'staging'
 
-def load_to_database(**kwargs):
+def load_to_database():
     engine = create_engine(f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}')
     
     s3_client = boto3.client('s3',
@@ -62,7 +62,7 @@ def load_to_database(**kwargs):
 dag = DAG(
     'database_loader_dag',
     description='DAG para cargar datos desde MinIO a PostgreSQL',
-    schedule_interval=None,
+    schedule=None,
     start_date=datetime(2023, 1, 1),
     catchup=False,
 )
@@ -70,7 +70,6 @@ dag = DAG(
 load_to_postgres_task = PythonOperator(
     task_id='load_to_database',
     python_callable=load_to_database,
-    provide_context=True,
     dag=dag,
 )
 

@@ -79,7 +79,7 @@ def ingest_data_to_datalake():
 dag = DAG(
     'data_ingestion_dag',
     description='DAG para descargar archivos y subir a Datalake',
-    schedule_interval=None,
+    schedule=None,
     start_date=datetime(2025, 1, 1),
     catchup=False,
 )
